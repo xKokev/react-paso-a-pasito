@@ -1,0 +1,10 @@
+@font-face {
+    font-family: OperatorMono-Book;
+    src: url(./);
+    font-family: OperatorMono-BookItalic;
+    src: url(OperatorMono-BookItalic.otf);
+}
+
+body {
+font-family: OperatorMono-Book;
+}
