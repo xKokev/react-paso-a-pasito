@@ -49,12 +49,22 @@
               <a href="../../index.html" class="nav-link"> 👈 </a>
             </li>
             <li class="nav-item">
-              <a href="#inicio" class="nav-link active" aria-current="page">
-                Inicio
+              <a
+                href="#instalacion"
+                class="nav-link active"
+                aria-current="page"
+              >
+                Instalacion
               </a>
             </li>
             <li class="nav-item">
-              <a href="#servicios" class="nav-link"> Servicios </a>
+              <a href="#componentes" class="nav-link"> Componentes </a>
+            </li>
+            <li class="nav-item">
+              <a href="#DIV" class="nav-link"> DIV </a>
+            </li>
+            <li class="nav-item">
+              <a href="#impresion" class="nav-link"> Impresion </a>
             </li>
             <li class="nav-item">
               <a
@@ -71,7 +81,7 @@
                 class="nav-link"
                 target="_blank"
               >
-                Linkedin
+                LinkedIn
               </a>
             </li>
             <li class="nav-item">
@@ -83,56 +93,60 @@
     </nav>
     <!-- navbar -->
     <!-- Main -->
-    <main class="bg-dark text-white py-5" id="inicio">
+    <main class="bg-dark text-white py-5" id="instalacion">
       <div class="container">
         <div class="text-center py-5 text-primary">
           <i class="bi bi-lightning h4"></i>
           <i class="bi bi-lightning h4 text-danger"></i>
           <i class="bi bi-lightning h4"></i>
         </div>
-        <h2 class="text-center horse-font">
-          Creacion de un proyecto en React *
-        </h2>
+        <h1 class="text-center horse-font">Creacion de un proyecto en React</h1>
+        <br />
+        <h1 class="text-center horse-font">*</h1>
+
         <div class="row align-items-center">
           <div class="col-12 col-md-4">
             <lottie-player
               id="firstLottie"
-              src="https://assets5.lottiefiles.com/packages/lf20_6k4jsmai.json"
-              style="width: 340px; height: 340px"
+              src="https://assets7.lottiefiles.com/packages/lf20_egxmocen.json"
+              style="width: 320px; height: 320px"
               >"></lottie-player
             >
           </div>
+
           <div class="col-12 col-md-8">
             <h2 class="text-center display-4 mb-5 horse-font">
-              Iinicio como configurar bla bla en el sistema bla blaa bla
+              Primeros pasos en React
             </h2>
           </div>
         </div>
-
+        <br />
         <div class="row align-items-center">
           <div class="col-12 col-md-4 horse-font">
-            <h5>React tipo de archivo</h5>
+            <h3>Estructura base de React</h3>
             <hr />
-            <p>
-              Luego de ganar el Campeonato de Europa Sub-17 de la UEFA 2015 con
-              Francia y ser incluido en el equipo ideal, clubes como Arsenal,
-              Manchester United y Manchester City se interesaron en fichar a
-              Upamecano.4​5​ Finalmente el 10 de julio de 2015, con 16 años,
-              fichó por Red Bull Salzburgo por 2,2 millones de euros por 3 años,
-              hasta el 30 de mayo de 2018, le fue adjudicado el dorsal número
-              4.6​ Dejó la sub-19 del Valenciennes F. C. de Francia para viajar
-              hasta su nuevo
-            </p>
+            <h4>
+              En la carpeta donde deseamos crear el proyecto, podemos ejecutar
+              en la consola el siguiente comando:
+              <br />
+              <code>npx create-react-app mi-app</code>
+              <br />
+              luego entramos a la carpeta con
+              <br />
+              <code> cd mi-app </code> <br />
+              y podemos iniciar nuetra app con <br />
+              <code>npm start</code>
+            </h4>
           </div>
-          <div class="col-12 col-md-8 c">
-            <pre><code class="language-html "
-          style="white-space: pre-wrap; font-size:medium ;"> &lt;body&gt;
-&lt;p&gt;faaaaaaaaaaaaaaaaaaafa Lorem, ipsum dolor sit amet consectetur adipisicing elit. Doloremque saepe molestiae quis tempore! Excepturi sequi possimus aliquid corrupti quod porro aliquam ipsa sint ipsum cumque, officiis est aut tempora eius.
-&lt;/p&gt;
-&lt;/body&gt;
-&lt;!-- Main -- &gt;
-        
-        </code></pre>
+          <div class="col-12 col-md-8">
+            <pre><code class="language-tree -F tree -F"
+          style="white-space: pre-wrap; font-size:medium ;">> 📁 node_modules
+> 📁 public
+> 📁 src
+    🥊 .gitignore
+    🥦 packages.json
+    💎 README.md
+    🎾 yarn.lock        </code></pre>
           </div>
         </div>
       </div>
@@ -140,14 +154,9 @@
     <!-- Main -->
 
     <!-- Main -->
-    <main class="bg-dark text-white py-5" id="servicios">
+    <main class="bg-dark text-white py-5" id="componentes">
       <hr />
       <div class="container">
-        <div class="text-center py-5 text-primary">
-          <i class="bi bi-lightning h4"></i>
-          <i class="bi bi-lightning h4 text-danger"></i>
-          <i class="bi bi-lightning h4"></i>
-        </div>
         <div class="row align-items-center">
           <div class="col-12 col-md-4 align-items-center">
             <lottie-player
@@ -158,49 +167,203 @@
             >
           </div>
           <div class="col-12 col-md-8">
-            <h2 class="text-center display-4 mb-5 horse-font">Iinicio</h2>
+            <h2 class="text-center display-4 mb-5 horse-font">
+              Componentes en React
+            </h2>
           </div>
         </div>
 
         <div class="row align-items-center">
           <div class="col-12 col-md-4 horse-font">
-            <h5>1Lorem ipsum dolor sit amet.</h5>
+            <h3>Componentes vs Estado</h3>
             <hr />
-            <p>
-              2Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque
-              magnam obcaecati veritatis architecto expedita assumenda, sequi,
-              eaque labore eum, perferendis deleniti? Repudiandae nulla alias
-              sint natus eligendi. In, voluptate consequuntur?
-            </p>
+            <h4>
+              🧝‍♀ COMPONENTES: La tarea de un componente es hacer lo macro en
+              pequeñas piezas mas faciles de mantener a su vez cada pieza o
+              componente deberia realizar una tarea distinta
+              <br />
+              🧙‍♂ ESTADO: Es como se encuentra la informacion de los componente
+              a traves del tiempo Recordar que cuando un componente es
+              renderizado tiene un estado inicial
+            </h4>
           </div>
           <div class="col-12 col-md-8">
-            <pre><code class="language-javascript "
-              style="white-space: pre-wrap; font-size:medium ;">/* -------Busqueda -----*/
-function myFunction() {
-  // Declare variables
-  var input, filter, ul, li, a, i, txtValue;
-  input = document.getElementById('myInput');
-  filter = input.value.toUpperCase();
-  ul = document.getElementById('myUL');
-  li = ul.getElementsByTagName('li');
+            <pre><code class="language-javascript"
+              style="white-space: pre-wrap; font-size:medium ;">import React from 'react'
 
-  // Loop through all list items, and hide those who don't match the search query
-  for (i = 0; i &lt; li.length; i++) {
-    a = li[i].getElementsByTagName('a')[0];
-    txtValue = a.textContent || a.innerText;
-    if (txtValue.toUpperCase().indexOf(filter) &gt; -1) {
-      li[i].style.display = '';
-    } else {
-      li[i].style.display = 'none';
-    }
-  }
-}  </code></pre>
+const Hola = () = &gt; {
+    return (
+        &lt; div &gt;
+
+            // Codigo a ejecutar
+
+        &lt; /div &gt;
+    )
+}
+
+export default  </code></pre>
+          </div>
+        </div>
+        <h4 class="text-center">
+          Es buena practica nombrar cada componente con la convención de
+          UpperCamelCase <br />
+          Gracias a las extenciones instaladas podemos escribir
+          <code> RAFCE </code> en vscode y obtener asi rapidamente esta
+          extructura
+        </h4>
+      </div>
+    </main>
+    <!-- Main -->
+    <main class="bg-dark text-white py-5" id="DIV">
+      <hr />
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-12 col-md-4 align-items-center">
+            <lottie-player
+              id="tresLottie"
+              src="https://assets5.lottiefiles.com/packages/lf20_6k4jsmai.json"
+              style="width: 340px; height: 340px"
+              >"></lottie-player
+            >
+          </div>
+          <div class="col-12 col-md-8">
+            <h2 class="text-center display-4 mb-5 horse-font">
+              Div vs Fragment vs < >
+            </h2>
+          </div>
+        </div>
+
+        <div class="row align-items-center">
+          <div class="col-12 col-md-4 horse-font">
+            <h3>Que deberiamos usar?</h3>
+            <hr />
+            <h4>
+              🍕 DIV: si necesitamos asignar clases podemos usar los div y de
+              esta manera poder identificarlos a traves de sus className
+              <br />
+              <br />
+              🍔 FRAGMENT: Si no queremos cargar divs ineccesarios es bastante
+              util, pero lo malo es que de igual manera debemos importar a
+              Fragment
+              <br />
+              <br />
+              🌭 < >: No es un chiste, podemos remplazar DIVS o FRAGMENTS usando
+              estos signos, lo unico malo es que no podemos asignar clases
+            </h4>
+          </div>
+          <div class="col-12 col-md-8">
+            <pre><code class="language-javascript"
+              style="white-space: pre-wrap; font-size:medium ;">// DIV
+import React from "react";
+export const HolaMundo = () =&gt; {
+  return (
+    &lt;div&gt;
+      &lt;h1&gt;Hola Mundo&lt;/h1&gt;
+    &lt;/div&gt;
+  );
+};
+export default HolaMundo; 
+
+// FRAGMENT
+import React, { Fragmnent } from "react";
+export const HolaMundo = () =&gt; {
+  return (
+    &lt; Fragmnent &gt;
+      &lt;h1&gt;Hola Mundo&lt;/h1&gt;
+    &lt; /Fragmnent &gt;
+  );
+};
+export default HolaMundo;
+
+// &lt; &gt;
+import React from "react";
+
+export const HolaMundo = () =&gt; {
+  return (
+    &lt;&gt;
+      &lt;h1&gt;Hola Mundo &lt;/h1&gt;
+    &lt;/&gt;
+  );
+};
+export default HolaMundo; </code></pre>
           </div>
         </div>
       </div>
     </main>
     <!-- Main -->
+    <main class="bg-dark text-white py-5" id="impresion">
+      <hr />
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-12 col-md-4 align-items-center">
+            <lottie-player
+              id="cuatroLottie"
+              src="https://assets10.lottiefiles.com/packages/lf20_mu1asgg9.json"
+              style="width: 340px; height: 340px"
+              >"></lottie-player
+            >
+          </div>
+          <div class="col-12 col-md-8">
+            <h2 class="text-center display-4 mb-5 horse-font">
+              Impresion de elementos en el DOM
+            </h2>
+          </div>
+        </div>
 
+        <div class="row align-items-center">
+          <div class="col-12 col-md-4 horse-font">
+            <h3>Mas sencillo que JavaScript puro</h3>
+            <hr />
+            <h4>
+              A diferencia de usar JavaScript vanilla imprimir elementos usando
+              React es relativamente mas sencillo, con menos lineas podremos
+              conseguir ese objetivo
+              <br />
+              <br />
+              Para poder enviar informacion al usaremos las llaves
+              <code>{hola} </code> con este metodo podremos imprimir distintos
+              tipos de elementos desde strings, numeros (tambien numeros
+              decimales), e incluso arrays pero nada de booleanos u objetos
+              <br />
+              <br />
+              Pero existe un <code>TRUCO</code> para imprimir objetos dentro de
+              nuestro DOM usando React
+            </h4>
+          </div>
+          <div class="col-12 col-md-8">
+            <pre><code class="language-javascript"
+              style="white-space: pre-wrap; font-size:medium ;">import React from 'react';
+const HolaMundo = () =&gt; {
+  const hola = 'Hola mundo bienvenido a React';
+  return (
+    &lt;div&gt;
+      &lt;h1&gt; {hola} &lt;/h1&gt;
+      &lt;p&gt;Soy un parrafo&lt;/p&gt;
+    &lt;/div&gt;
+  );
+};
+export default HolaMundo;
+
+// TRUCO Impresion de objetos
+import React from "react";
+const HolaMundo = () =&gt; {
+  const hola = {
+    nombre: "Rocky",
+    raza: "Pastor Aleman",
+    edad: "3",
+  };
+  return (
+    &lt;div&gt;
+      &lt;pre&gt; {JSON.stringify(hola, null, 2)} &lt;/pre&gt;
+      &lt;p&gt;Soy un parrafo&lt;/p&gt;
+    &lt;/div&gt;
+  );
+};
+export default HolaMundo;      </code></pre>
+          </div>
+        </div>
+      </div>
+    </main>
     <!-- Footer -->
     <footer class="container-fluid py-5 text-center bg-dark text-white">
       <div class="icons-social-networks">
@@ -265,7 +428,7 @@ function myFunction() {
           {
             visibility: [0, 1],
             type: 'seek',
-            frames: [0, 105],
+            frames: [0, 12],
           },
         ],
       });
@@ -279,6 +442,32 @@ function myFunction() {
             visibility: [0, 1],
             type: 'seek',
             frames: [0, 179],
+          },
+        ],
+      });
+    </script>
+    <script>
+      LottieInteractivity.create({
+        mode: 'scroll',
+        player: '#tresLottie',
+        actions: [
+          {
+            visibility: [0, 1],
+            type: 'seek',
+            frames: [0, 105],
+          },
+        ],
+      });
+    </script>
+    <script>
+      LottieInteractivity.create({
+        mode: 'scroll',
+        player: '#cuatroLottie',
+        actions: [
+          {
+            visibility: [0, 1],
+            type: 'seek',
+            frames: [0, 12],
           },
         ],
       });
