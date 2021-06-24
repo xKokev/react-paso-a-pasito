@@ -46,25 +46,21 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav ms-auto mb-2 mb-lg-0 horse-font">
             <li class="nav-item">
-              <a href="../../index.html" class="nav-link"> 👈 </a>
+              <a href="../../src/pages/1.html" class="nav-link"> 👈 </a>
             </li>
             <li class="nav-item">
-              <a
-                href="#instalacion"
-                class="nav-link active"
-                aria-current="page"
-              >
-                Instalacion
+              <a href="#prop" class="nav-link active" aria-current="page">
+                Props
               </a>
             </li>
             <li class="nav-item">
-              <a href="#componentes" class="nav-link"> Componentes </a>
+              <a href="#envio-prop" class="nav-link"> Envio de prop </a>
             </li>
             <li class="nav-item">
-              <a href="#DIV" class="nav-link"> DIV </a>
+              <a href="#prop-types" class="nav-link"> PropTypes </a>
             </li>
             <li class="nav-item">
-              <a href="#impresion" class="nav-link"> Impresion </a>
+              <a href="#default-props" class="nav-link"> DefaultProps </a>
             </li>
             <li class="nav-item">
               <a
@@ -85,7 +81,7 @@
               </a>
             </li>
             <li class="nav-item">
-              <a href="../pages/2.html" class="nav-link"> 👉 </a>
+              <a href="../pages/3.html" class="nav-link"> 👉 </a>
             </li>
           </ul>
         </div>
@@ -93,60 +89,81 @@
     </nav>
     <!-- navbar -->
     <!-- Main -->
-    <main class="bg-dark text-white py-5" id="instalacion">
+    <main class="bg-dark text-white py-5" id="prop">
       <div class="container">
         <div class="text-center py-5 text-primary">
           <i class="bi bi-lightning h4"></i>
           <i class="bi bi-lightning h4 text-danger"></i>
           <i class="bi bi-lightning h4"></i>
         </div>
-        <h1 class="text-center horse-font">Creacion de un proyecto en React</h1>
+        <h1 class="text-center horse-font">
+          Props, PropTypes y DefaultProps en React
+        </h1>
         <br />
         <h1 class="text-center horse-font">*</h1>
 
         <div class="row align-items-center">
           <div class="col-12 col-md-4">
             <lottie-player
-              id="firstLottie"
-              src="../../img/1/thor.json"
-              style="width: 320px; height: 320px"
+              id="unoLottie"
+              src="../../img/2/monstruo.json"
+              style="width: 340px; height: 340px"
               >"></lottie-player
             >
           </div>
 
           <div class="col-12 col-md-8">
             <h2 class="text-center display-4 mb-5 horse-font">
-              Primeros pasos en React
+              Que es un prop en React?
             </h2>
           </div>
         </div>
         <br />
         <div class="row align-items-center">
           <div class="col-12 col-md-4 horse-font">
-            <h3>Estructura base de React</h3>
+            <h3>Que hace un prop en React?</h3>
             <hr />
             <h4>
-              En la carpeta donde deseamos crear el proyecto, podemos ejecutar
-              en la consola el siguiente comando:
+              Los props son argumentos que se envian a los componentes de React
+              y estos se pasan a través de atributos HTML. Basicamente podemos
+              enviar informacion desde un componentes a nuestro index a traves
+              de los props y existen dos maneras de que esto ocurra (todos los
+              componentes reciben props)
               <br />
-              <code>npx create-react-app mi-app</code>
               <br />
-              luego entramos a la carpeta con
-              <br />
-              <code> cd mi-app </code> <br />
-              y podemos iniciar nuetra app con <br />
-              <code>npm start</code>
+              Caso 1 (Menos comun) <br />
+              Añadiremos el prop en nuestro componente y pero desde el archivo
+              <code>index</code> enviaremos el prop a el
+              <code>componente</code>
+              <br /><br />El prop es capturado en el
+              <code>componente</code> recibiendo el valor por defecto que se
+              envia desde el <code>index</code>
             </h4>
           </div>
           <div class="col-12 col-md-8">
-            <pre><code class="language-tree -F tree -F"
-          style="white-space: pre-wrap; font-size:medium ;">> 📁 node_modules
-> 📁 public
-> 📁 src
-    🥊 .gitignore
-    🥦 packages.json
-    💎 README.md
-    🎾 yarn.lock        </code></pre>
+            <pre><code class="language-javascript"
+          style="white-space: pre-wrap; font-size:medium ;">// Archivo HolaMundo.js (componente)
+import React from 'react';
+const HolaMundo = (props) =&gt; {
+  return (
+    &lt;div&gt;
+      &lt;h1&gt; {props.ladrido} &lt;/h1&gt;
+      &lt;p&gt;Soy un parrafo&lt;/p&gt;
+    &lt;/div&gt;
+  );
+};
+export default HolaMundo; </code></pre>
+            <br />
+            <pre><code class="language-javascript"
+  style="white-space: pre-wrap; font-size:medium ;"> //Archivo Index
+import React from 'react';
+import ReactDOM from 'react-dom';
+import { HolaMundo } from './HolaMundo';
+const divRoot = document.querySelector('#root');
+ReactDOM.render(
+  &lt;HolaMundo ladrido='Guau Guau, por defecto pero desde el archivo index' /&gt;,
+  divRoot
+); </code></pre>
           </div>
         </div>
       </div>
@@ -154,214 +171,175 @@
     <!-- Main -->
 
     <!-- Main -->
-    <main class="bg-dark text-white py-5" id="componentes">
+    <main class="bg-dark text-white py-5" id="envio-prop">
       <hr />
       <div class="container">
         <div class="row align-items-center">
           <div class="col-12 col-md-4 align-items-center">
             <lottie-player
-              id="twoLottie"
-              src="../../img/1/loki.json"
+              id="dosLottie"
+              src="https://assets6.lottiefiles.com/animated_stickers/lf_tgs_S9BQDc.json"
               style="width: 340px; height: 340px"
               >"></lottie-player
             >
           </div>
           <div class="col-12 col-md-8">
             <h2 class="text-center display-4 mb-5 horse-font">
-              Componentes en React
+              Envio del prop desde el componente al index
             </h2>
           </div>
         </div>
-
+        <br />
         <div class="row align-items-center">
           <div class="col-12 col-md-4 horse-font">
-            <h3>Componentes vs Estado</h3>
+            <h3>Como enviar un prop desde un componente?</h3>
             <hr />
             <h4>
-              🧝‍♀ COMPONENTES: La tarea de un componente es hacer lo macro en
-              pequeñas piezas mas faciles de mantener a su vez cada pieza o
-              componente deberia realizar una tarea distinta
-              <br />
-              🧙‍♂ ESTADO: Es como se encuentra la informacion de los componente
-              a traves del tiempo Recordar que cuando un componente es
-              renderizado tiene un estado inicial
+              Caso 2 (Popular): <br />
+              Añadiremos el prop en nuestro componente, ahora hay que estar
+              atento porque pueden que no envien un valor por defecto desde el
+              archivo index.
+              <br /><br />
+              Daremos un valor por defecto desde nuestro componente para
+              asegurarnos de no obtener un <code>undefined</code>
+              <br /><br />Pero este codigo se puede mejorar usando los
+              <code>propTypes</code>
             </h4>
           </div>
           <div class="col-12 col-md-8">
             <pre><code class="language-javascript"
-              style="white-space: pre-wrap; font-size:medium ;">import React from 'react'
+              style="white-space: pre-wrap; font-size:medium ;">import React from "react";
 
-const Hola = () = &gt; {
-    return (
-        &lt; div &gt;
+const HolaMundo = ({ ladrido = "Guau Guau, por defecto pero desde el componente" }) =&gt; {
+  return (
+    &lt;div&gt;
+      &lt;h1&gt; {ladrido} &lt;/h1&gt;
+      &lt;p&gt;Soy un parrafo&lt;/p&gt;
+    &lt;/div&gt;
+  );
+};
 
-            // Codigo a ejecutar
-
-        &lt; /div &gt;
-    )
-}
-
-export default  </code></pre>
+export default HolaMundo;        </code></pre>
           </div>
         </div>
-        <h4 class="text-center">
-          Es buena practica nombrar cada componente con la convención de
-          UpperCamelCase <br />
-          Gracias a las extenciones instaladas podemos escribir
-          <code> RAFCE </code> en vscode y obtener asi rapidamente esta
-          extructura
-        </h4>
       </div>
     </main>
     <!-- Main -->
-    <main class="bg-dark text-white py-5" id="DIV">
+    <main class="bg-dark text-white py-5" id="prop-types">
       <hr />
       <div class="container">
         <div class="row align-items-center">
           <div class="col-12 col-md-4 align-items-center">
             <lottie-player
               id="tresLottie"
-              src="../../img/1/rayo.json"
+              src="../../img/2/frank.json"
               style="width: 340px; height: 340px"
               >"></lottie-player
             >
           </div>
           <div class="col-12 col-md-8">
             <h2 class="text-center display-4 mb-5 horse-font">
-              Div vs Fragment vs < >
+              Validaciones con PropTypes en React
             </h2>
           </div>
         </div>
 
         <div class="row align-items-center">
           <div class="col-12 col-md-4 horse-font">
-            <h3>Que deberiamos usar Div, fragment o < >?</h3>
+            <h3>Un truco con propTypes en React</h3>
             <hr />
             <h4>
-              🍕 DIV: si necesitamos asignar clases podemos usar los div y de
-              esta manera poder identificarlos a traves de sus className
-              <br />
-              <br />
-              🍔 FRAGMENT: Si no queremos cargar divs ineccesarios es bastante
-              util, pero lo malo es que de igual manera debemos importar a
-              Fragment
-              <br />
-              <br />
-              🌭 < >: No es un chiste, podemos remplazar DIVS o FRAGMENTS usando
-              estos signos, lo unico malo es que no podemos asignar clases
+              En vez de enviar un valor por defecto desde el componente usaremos
+              los propTypes para validar segun nuestra necesidad.
+              <br /><br />
+              Podriamos validar el envio de un string, un boolean, number, un
+              array u objeto
+              <br /><br />
+              Tambien podemos hacer que a traves de los prop Types sea
+              obligatorio ese campo
             </h4>
           </div>
           <div class="col-12 col-md-8">
             <pre><code class="language-javascript"
-              style="white-space: pre-wrap; font-size:medium ;">// DIV
-import React from "react";
-export const HolaMundo = () =&gt; {
+              style="white-space: pre-wrap; font-size:medium ;">import React from 'react';
+import PropTypes from 'prop-types';
+const HolaMundo = ({ ladrido }) =&gt; {
   return (
     &lt;div&gt;
-      &lt;h1&gt;Hola Mundo&lt;/h1&gt;
+      &lt;h1&gt; {ladrido} &lt;/h1&gt;
+      &lt;p&gt;Soy un parrafo&lt;/p&gt;
     &lt;/div&gt;
   );
 };
-export default HolaMundo; 
-
-// FRAGMENT
-import React, { Fragmnent } from "react";
-export const HolaMundo = () =&gt; {
-  return (
-    &lt; Fragmnent &gt;
-      &lt;h1&gt;Hola Mundo&lt;/h1&gt;
-    &lt; /Fragmnent &gt;
-  );
+HolaMundo.propTypes = {
+  ladrido: PropTypes.string.isRequired,
 };
-export default HolaMundo;
-
-// &lt; &gt;
-import React from "react";
-
-export const HolaMundo = () =&gt; {
-  return (
-    &lt;&gt;
-      &lt;h1&gt;Hola Mundo &lt;/h1&gt;
-    &lt;/&gt;
-  );
-};
-export default HolaMundo; </code></pre>
+export default HolaMundo;    </code></pre>
           </div>
         </div>
       </div>
     </main>
     <!-- Main -->
-    <main class="bg-dark text-white py-5" id="impresion">
+    <main class="bg-dark text-white py-5" id="default-props">
       <hr />
       <div class="container">
         <div class="row align-items-center">
           <div class="col-12 col-md-4 align-items-center">
             <lottie-player
               id="cuatroLottie"
-              src="../../img/1/thorvs.json"
+              src="../../img/2/clash.json"
               style="width: 340px; height: 340px"
               >"></lottie-player
             >
           </div>
           <div class="col-12 col-md-8">
             <h2 class="text-center display-4 mb-5 horse-font">
-              Impresion de elementos en el DOM con React
+              Default Values con defaultProps
             </h2>
           </div>
         </div>
 
         <div class="row align-items-center">
           <div class="col-12 col-md-4 horse-font">
-            <h3>Diferencia en el DOM con React y JavaScript</h3>
+            <h3>Valor por defecto usando defaultProps</h3>
             <hr />
             <h4>
-              🎮 A diferencia de usar JavaScript vanilla imprimir elementos
-              usando React es relativamente mas sencillo, con menos lineas
-              podremos conseguir ese objetivo
-              <br />
-              <br />
-              👾 Para poder enviar informacion al usaremos las llaves
-              <code>{hola} </code> con este metodo podremos imprimir distintos
-              tipos de elementos desde strings, numeros (tambien numeros
-              decimales), e incluso arrays pero nada de booleanos u objetos
-              <br />
-              <br />
-              🎲 Pero existe un <code>TRUCO</code> para imprimir objetos dentro
-              de nuestro DOM usando React
+              Se puede asignar valor por default desde el mismo componente
+              usando los defaultProps
+              <br /><br />
+              Muchas veces el valor por defecto se deja " " como un valor vacio
+              para indicar en cosola que el prop existe y no se marque como
+              undefined
             </h4>
           </div>
           <div class="col-12 col-md-8">
             <pre><code class="language-javascript"
-              style="white-space: pre-wrap; font-size:medium ;">import React from 'react';
-const HolaMundo = () =&gt; {
-  const hola = 'Hola mundo bienvenido a React';
+              style="white-space: pre-wrap; font-size:medium ;">import React from "react";
+import PropTypes from "prop-types";
+const HolaMundo = ({ ladrido, parrafo }) =&gt; {
   return (
     &lt;div&gt;
-      &lt;h1&gt; {hola} &lt;/h1&gt;
-      &lt;p&gt;Soy un parrafo&lt;/p&gt;
+      &lt;h1&gt; {ladrido} &lt;/h1&gt;
+      &lt;p&gt; {parrafo} &lt;/p&gt;
     &lt;/div&gt;
   );
 };
-export default HolaMundo;
+HolaMundo.propTypes = {
+  ladrido: PropTypes.string.isRequired,
+};
 
-// TRUCO Impresion de objetos
-import React from "react";
-const HolaMundo = () =&gt; {
-  const hola = {
-    nombre: "Rocky",
-    raza: "Pastor Aleman",
-    edad: "3",
-  };
-  return (
-    &lt;div&gt;
-      &lt;pre&gt; {JSON.stringify(hola, null, 2)} &lt;/pre&gt;
-      &lt;p&gt;Soy un parrafo&lt;/p&gt;
-    &lt;/div&gt;
-  );
+HolaMundo.defaultProps = {
+  parrafo: "Soy un parrafo desde el componente",
 };
-export default HolaMundo;      </code></pre>
+export default HolaMundo;        </code></pre>
           </div>
         </div>
+        <h4 class="text-center">
+          Añadir " " indica a react que el valor existe, y que ademas es un
+          string, si no se da un nada como un valor por defecto, saltara el
+          undefinded por lo cual al enviar un string vacio podremos mutarlo
+          luego
+        </h4>
       </div>
     </main>
     <!-- Footer -->
@@ -414,12 +392,12 @@ export default HolaMundo;      </code></pre>
     <script>
       LottieInteractivity.create({
         mode: 'scroll',
-        player: '#firstLottie',
+        player: '#unoLottie',
         actions: [
           {
             visibility: [0, 1],
             type: 'seek',
-            frames: [0, 12],
+            frames: [0, 60],
           },
         ],
       });
@@ -427,12 +405,12 @@ export default HolaMundo;      </code></pre>
     <script>
       LottieInteractivity.create({
         mode: 'scroll',
-        player: '#twoLottie',
+        player: '#dosLottie',
         actions: [
           {
             visibility: [0, 1],
             type: 'seek',
-            frames: [0, 179],
+            frames: [0, 280],
           },
         ],
       });
@@ -445,7 +423,7 @@ export default HolaMundo;      </code></pre>
           {
             visibility: [0, 1],
             type: 'seek',
-            frames: [0, 105],
+            frames: [0, 161],
           },
         ],
       });
@@ -458,7 +436,7 @@ export default HolaMundo;      </code></pre>
           {
             visibility: [0, 1],
             type: 'seek',
-            frames: [0, 12],
+            frames: [0, 35],
           },
         ],
       });
