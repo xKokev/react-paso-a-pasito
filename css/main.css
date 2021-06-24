@@ -82,3 +82,15 @@ body{
 .horse-font{
   font-family: 'horse-font';
 }
+.telegram-circle{
+clip-path: circle(50% at 50% 50%);
+background-color: rgb(100, 250, 255);
+}
+.ig-circle{
+  clip-path: circle(50% at 50% 50%);
+  background-color: rgb(255, 57, 106);
+  }
+  .linkedin-circle{
+    clip-path: circle(50% at 50% 50%);
+    background-color: rgb(85, 137, 250);
+    }

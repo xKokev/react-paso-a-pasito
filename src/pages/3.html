@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="../../css/main.css" />
+    <link rel="stylesheet" href="../../css/prism.css" />
+    <link rel="icon" type="image/png" href="../../img/cap.svg" />
+
+    <title>React tutoriales paso a paso</title>
+  </head>
+  <body class="f-bar">
+    <!-- navbar -->
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
+      <div class="container">
+        <div class="icons-social-networks">
+          <!--A-icon-->
+          <a
+            href="../../index.html"
+            rel="noopener noreferrer"
+            class="icon-svg-size"
+            ><img src="../../img/react.svg" alt="React"
+          /></a>
+          <!--Z-icon-->
+        </div>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav ms-auto mb-2 mb-lg-0 horse-font">
+            <li class="nav-item">
+              <a href="../../src/pages/2.html" class="nav-link"> 👈 </a>
+            </li>
+            <li class="nav-item">
+              <a href="#prop" class="nav-link active" aria-current="page">
+                Props
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="#que-es-hook" class="nav-link">Hook </a>
+            </li>
+            <li class="nav-item">
+              <a href="#useState" class="nav-link"> useState </a>
+            </li>
+
+            <li class="nav-item">
+              <a
+                href="https://t.me/KevinCorrea"
+                class="nav-link"
+                target="_blank"
+              >
+                Telegram
+              </a>
+            </li>
+            <li class="nav-item">
+              <a
+                href="https://www.linkedin.com/in/kevincorreasuarez/"
+                class="nav-link"
+                target="_blank"
+              >
+                LinkedIn
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="../pages/4.html" class="nav-link"> 👉 </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <!-- navbar -->
+    <!-- Main -->
+    <main class="bg-dark text-white py-5" id="que-es-hook">
+      <div class="container">
+        <div class="text-center py-5 text-primary">
+          <i class="bi bi-lightning h4"></i>
+          <i class="bi bi-lightning h4 text-danger"></i>
+          <i class="bi bi-lightning h4"></i>
+        </div>
+        <h1 class="text-center horse-font">El Hook de useState</h1>
+        <br />
+        <h1 class="text-center horse-font">*</h1>
+
+        <div class="row align-items-center">
+          <div class="col-12 col-md-4">
+            <lottie-player
+              id="unoLottie"
+              src="../../img/3/rabbit.json"
+              style="width: 340px; height: 340px"
+              >"></lottie-player
+            >
+          </div>
+
+          <div class="col-12 col-md-8">
+            <h2 class="text-center display-4 mb-5 horse-font">
+              Qué es un Hook? useState?
+            </h2>
+          </div>
+        </div>
+        <br />
+        <div class="row align-items-center">
+          <div class="col-12 col-md-4 horse-font">
+            <h3>Cuando usar un hook?</h3>
+            <hr />
+            <h4>
+              Para empezar necesitamos saber que es un Hook:<br />
+              Podria considerarse que es algo relativamente nuevo y la misma web
+              oficial lo explica asi: "Un Hook es una función especial que
+              permite “conectarse” a características de React."
+              <br />
+              Podemos usarlo cuando necesitamos añadir un estado a nuestro
+              componente sin la necesidad de llamar a una clase
+              <br /><br />En este ejemplo usamos el hook de useState y sera
+              expicado mas adelante
+            </h4>
+          </div>
+          <div class="col-12 col-md-8">
+            <pre><code class="language-jsx"
+          style="white-space: pre-wrap; font-size:medium ;">import React from 'react';
+
+const Contador = ({ value }) =&gt; {
+  const [numeracion, setNumeracion] = useState(0);
+  const handleAdd = () =&gt; {
+    setNumeracion(numeracion + 1);
+    // setNumeracion((c)=&gt; c + 1); Tambien valido para la linea anterior
+  };
+
+  return (
+    &lt;&gt;
+      &lt;h2&gt;{numeracion}&lt;/h2&gt;
+      &lt;button onClick={handleAdd}&gt;Boton que suma +1&lt;/button&gt;
+    &lt;/&gt;
+  );
+};
+Contador.propTypes = {
+  value: PropTypes.number.isRequired,
+};
+
+export default Contador; </code></pre>
+            <br />
+          </div>
+        </div>
+        <h4 class="text-center">
+          Las 2 reglas de los Hooks
+          <br />
+          Regla 1. No llames Hooks dentro de ciclos, condicionales o funciones
+          anidadas
+          <br />
+          Regla 2.- Llama Hooks solo en funciones de React
+        </h4>
+      </div>
+    </main>
+    <!-- Main -->
+
+    <!-- Main -->
+    <main class="bg-dark text-white py-5" id="useState">
+      <hr />
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-12 col-md-4 align-items-center">
+            <lottie-player
+              id="dosLottie"
+              src="../../img/3/turkey.json"
+              style="width: 340px; height: 340px"
+              >"></lottie-player
+            >
+          </div>
+          <div class="col-12 col-md-8">
+            <h2 class="text-center display-4 mb-5 horse-font">
+              Como usar useState en React?
+            </h2>
+          </div>
+        </div>
+        <br />
+        <div class="row align-items-center">
+          <div class="col-12 col-md-4 horse-font">
+            <h3>useState para que sirve?</h3>
+            <hr />
+            <h4>
+              El useState es un hook que nos devuelve un array [valor,
+              cambiador] y un "valor default" <br />
+              <br />
+              Por lo general en este hook se asignan asi las constantes
+              [valor,setValor] y pueden ser los nombres que querramos pero se
+              usa este modelo para leer mas facil el codigo <br />
+              Gracias a la desestructuración de arrays de JavaScript usamos los
+              corchetes para no escribir tanto codigo <br /><br />El primer
+              elemento es el estado inicial y el segundo es una función que se
+              utiliza para actualizar el estado inicial a su vez el valor
+              devuelto por la función se utilizará como estado inicial.
+              <br /><br />En este ejemplo se usa 3 veces useState para modificar
+              un contador que empezamos con 50
+            </h4>
+          </div>
+          <div class="col-12 col-md-8">
+            <pre><code class="language-jsx"
+              style="white-space: pre-wrap; font-size:medium ;">import React from "react";
+
+const Contador = ({ value = 50 }) =&gt; {
+  const [cantidad, setCantidad] = useState(value);
+
+  const handleAdd = () =&gt; {
+    setCantidad(cantidad + 1);
+  };
+
+  const handleSubstract = () =&gt; {
+    setCantidad(cantidad - 1);
+  };
+
+  const handleReset = () =&gt; {
+    setCantidad(value);
+  };
+
+  return (
+    &lt;&gt;
+      &lt;h1&gt;CounterApp&lt;/h1&gt;
+      &lt;h2&gt;{cantidad}&lt;/h2&gt;
+
+      &lt;button onClick={handleAdd}&gt; Boton que suma +1 &lt;/button&gt;
+      &lt;button onClick={handleSubstract}&gt; Boton que resta -1 &lt;/button&gt;
+      &lt;button onClick={handleReset}&gt; Boton de RESET &lt;/button&gt;
+    &lt;/&gt;
+  );
+};
+Contador.propTypes = {
+  value: PropTypes.number.isRequired,
+};
+
+export default Contador;              </code></pre>
+          </div>
+        </div>
+      </div>
+    </main>
+    <!-- Main -->
+
+    <!-- Footer -->
+    <footer class="container-fluid py-5 text-center bg-dark text-white">
+      <div class="icons-social-networks">
+        <!--A-Instagram-->
+        <a
+          href="https://www.instagram.com/xkokev/"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="bg-instagram icon-svg-size ig-circle"
+          ><img src="../../img/instagram.svg" alt="Instagram"
+        /></a>
+        <!--Z-Instagram-->
+        <!--A-Telegram-->
+        <a
+          href="https://t.me/KevinCorrea"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="bg-twitter icon-svg-size mx-3 telegram-circle"
+          ><img src="../../img/telegram.svg" alt="telegram"
+        /></a>
+        <!--Z-Telegram-->
+        <!--A-Linkedin-->
+        <a
+          href="https://www.linkedin.com/in/kevincorreasuarez/"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="bg-linkedin icon-svg-size linkedin-circle"
+          ><img src="../../img/linkedin.svg" alt="Linkedin"
+        /></a>
+        <!--Z-Linkedin-->
+      </div>
+      <p class="horse-font">Hecho con ❤ Kevin</p>
+    </footer>
+    <!-- Footer -->
+
+    <!-- Scroll -->
+
+    <!-- Scroll -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW"
+      crossorigin="anonymous"
+    ></script>
+    <script src="../../js/prism.js"></script>
+    <script src="../../js/main.js"></script>
+    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+    <script src="https://unpkg.com/@lottiefiles/lottie-interactivity@latest/dist/lottie-interactivity.min.js"></script>
+
+    <script>
+      LottieInteractivity.create({
+        mode: 'scroll',
+        player: '#unoLottie',
+        actions: [
+          {
+            visibility: [0, 1],
+            type: 'seek',
+            frames: [75, 90],
+          },
+        ],
+      });
+    </script>
+    <script>
+      LottieInteractivity.create({
+        mode: 'scroll',
+        player: '#dosLottie',
+        actions: [
+          {
+            visibility: [0, 1],
+            type: 'seek',
+            frames: [48, 69],
+          },
+        ],
+      });
+    </script>
+  </body>
+</html>
