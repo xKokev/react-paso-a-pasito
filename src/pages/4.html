@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="../../css/main.css" />
+    <link rel="stylesheet" href="../../css/prism.css" />
+    <link rel="icon" type="image/png" href="../../img/cap.svg" />
+
+    <title>React tutoriales paso a paso</title>
+  </head>
+  <body class="f-bar">
+    <!-- navbar -->
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
+      <div class="container">
+        <div class="icons-social-networks">
+          <!--A-icon-->
+          <a
+            href="../../index.html"
+            rel="noopener noreferrer"
+            class="icon-svg-size"
+            ><img src="../../img/react.svg" alt="React"
+          /></a>
+          <!--Z-icon-->
+        </div>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav ms-auto mb-2 mb-lg-0 horse-font">
+            <li class="nav-item">
+              <a href="../../src/pages/3.html" class="nav-link"> 👈 </a>
+            </li>
+            <li class="nav-item">
+              <a href="#base" class="nav-link active" aria-current="page">
+                Base
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="#envio-prop" class="nav-link"> Envio de prop </a>
+            </li>
+            <li class="nav-item">
+              <a href="#estructura" class="nav-link"> Estructura </a>
+            </li>
+            <li class="nav-item">
+              <a href="#paso-paso" class="nav-link"> Paso a paso </a>
+            </li>
+            <li class="nav-item">
+              <a
+                href="https://t.me/KevinCorrea"
+                class="nav-link"
+                target="_blank"
+              >
+                Telegram
+              </a>
+            </li>
+            <li class="nav-item">
+              <a
+                href="https://www.linkedin.com/in/kevincorreasuarez/"
+                class="nav-link"
+                target="_blank"
+              >
+                LinkedIn
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="../pages/5.html" class="nav-link"> 👉 </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <!-- navbar -->
+    <!-- Main -->
+    <main class="bg-dark text-white py-5" id="base">
+      <div class="container">
+        <div class="text-center py-5 text-primary">
+          <i class="bi bi-lightning h4"></i>
+          <i class="bi bi-lightning h4 text-danger"></i>
+          <i class="bi bi-lightning h4"></i>
+        </div>
+        <h1 class="text-center horse-font">
+          Pruebas unitarias y de integracion
+        </h1>
+        <br />
+        <h1 class="text-center horse-font">*</h1>
+
+        <div class="row align-items-center">
+          <div class="col-12 col-md-4">
+            <lottie-player
+              id="unoLottie"
+              src="../../img/4/1pink.json"
+              style="width: 340px; height: 340px"
+              >"></lottie-player
+            >
+          </div>
+          <div class="col-12 col-md-8">
+            <h2 class="text-center display-4 mb-5 horse-font">
+              Pruebas de componentes en React?
+            </h2>
+          </div>
+        </div>
+        <br />
+        <div class="row align-items-center">
+          <div class="col-12 col-md-4 horse-font">
+            <h3>Pruebas unitarias y pruebas de integracion</h3>
+            <hr />
+            <h4>
+              Pruebas unitarias <br />
+              Pruebas de pequeñas funcionalidades de la aplicacion <br /><br />
+              Pruebas de integracion <br />Pruebas de distintos componentes
+              juntos <br />
+              <br />Organizacion de las pruebas <br />
+              Se puede tener los test en la misma carpeta donde estan nuestros
+              archivos a probar, pero puede ser dificil de leer despues...
+              <br />
+              Para evitar este problemas nos crearemos una carpeta test donde
+              guardaremos todas las pruebas tal que asi
+            </h4>
+          </div>
+          <div class="col-12 col-md-8">
+            <pre><code class="language-files"
+          style="white-space: pre-wrap; font-size:medium ;"> Organizacion de archivos 
+&gt; 📁 node_modules
+&gt; 📁 public
+  〰 📂 src
+    〰 📂 test   
+          🏺 primeraPrueba.test.js   
+     ⚛️ HolaMundo.jsx
+     ⚛️ index.jsx     
+ 🥊 .gitignore
+ 🥦 packages.json
+ 💎 README.md
+ 🎾 yarn.lock         </code></pre>
+            <br />
+            <h4 class="text-center">
+              Siglas AAA <br />
+              Arrange (Arreglar) inicializar variables Importaciones necesarias
+              <br />
+              Act (Actuar) Llamada de metodos Simulacion de clicks Realizacion
+              de acciones <br />Assert (Afirmar) Observar los comportamientos de
+              los resultados
+            </h4>
+          </div>
+        </div>
+        <h4 class="text-center">
+          <br />
+          No hay que probar librerias de terceros, debemos probar son las
+          interacciones de la libreria dentro de nuestra aplicacion
+        </h4>
+      </div>
+    </main>
+    <!-- Main -->
+
+    <!-- Main -->
+    <main class="bg-dark text-white py-5" id="estructura">
+      <hr />
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-12 col-md-4 align-items-center">
+            <lottie-player
+              id="dosLottie"
+              src="../../img/4/2pink.json"
+              style="width: 340px; height: 340px"
+              >"></lottie-player
+            >
+          </div>
+          <div class="col-12 col-md-8">
+            <h2 class="text-center display-4 mb-5 horse-font">
+              Archivos de pruebas
+            </h2>
+          </div>
+        </div>
+        <br />
+        <div class="row align-items-center">
+          <div class="col-12 col-md-4 horse-font">
+            <h3>Estructura y formato de las pruebas</h3>
+            <hr />
+            <h4>
+              El formato de los archivos de pruebas es
+              <code>files.test.js</code> <br />
+              Para ejecutar las pruebas se usa el comando
+              <code>npm run test</code> <br />
+              De esta manera estaremos ejecutando el script de la prueba <br />
+              Al ejecutar este comando el Test suite buscara dentro del
+              directorio encontrado todos los archivos .test.js
+              <br /><br />
+              Snipet para los archivos .test.js <br />
+              <code> test + tab </code> y cargaremos este trozo de codigo a
+              nuestro archivo <br /><br />Estructura del archivo .test.js <br />
+              Es importante decir que cada con cada cambio guardado se ejecutara
+              las pruebas si ya se esta corriendo el archivo y se correrian
+              todos los archivos de prueba pero se puede configurar JEST viene
+              precargado cuando iniciamos nuestra aplicacion en React
+            </h4>
+          </div>
+          <div class="col-12 col-md-8">
+            <pre><code class="language-jsx"
+              style="white-space: pre-wrap; font-size:medium ;"> // Snipet de test
+test("should ", () =&gt; {});
+</code></pre>
+            <br />
+            <pre><code class="language-jsx"
+  style="white-space: pre-wrap; font-size:medium ;"> // Organizacion dentro de un archivo de pruebas
+test("Aqui indicaremos que estaremos probando ", () => {
+
+    Aqui se escribiria todo el codigo necesario
+});
+</code></pre>
+          </div>
+        </div>
+      </div>
+    </main>
+    <!-- Main -->
+    <main class="bg-dark text-white py-5" id="paso-paso">
+      <hr />
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-12 col-md-4 align-items-center">
+            <lottie-player
+              id="tresLottie"
+              src="../../img/4/3pink.json"
+              style="width: 340px; height: 340px"
+              >"></lottie-player
+            >
+          </div>
+          <div class="col-12 col-md-8">
+            <h2 class="text-center display-4 mb-5 horse-font">
+              Validaciones con PropTypes en React
+            </h2>
+          </div>
+        </div>
+
+        <div class="row align-items-center">
+          <div class="col-12 col-md-4 horse-font">
+            <h3>Pasos para ejecutar pruebas en React</h3>
+            <hr />
+            <h4>
+              Paso 1 <br />
+              Exportacion de lo que queremos testar <br />
+              Recordar para poder usar funciones que querramos probar en
+              nuestras prueba, tenemos que modificar en el archivo original
+              donde se encuentra la funcion/metodo debemos realizar la
+              exportacion (simplemente escribiendo export antes de la funcion )
+              <br />
+              <br />
+              Paso 2 <br />
+              Creacion de archivo <code>.tets.js</code> y creacion de estructura
+              base <br />
+              Creamos el archivo de pruebas en su debida carpeta luego podemos
+              crear la estructura rapidamente con un snipet escribiendo
+              <code> desc + tab</code> se nos creara la esctructura base
+              <br /><br />
+              Paso 3
+              <br />
+              Importar la libreria JEST (En realidad este paso es opcional) esto
+              nos dara los snippets de los metodos y propiedades de JEST que a
+              veces VS Code no nos sugiere
+              <br /><br />
+              Paso 4 Importacion de los metodos/funciones que usaremos
+              <br />
+              En el archivo de pruebas simplemente escribiendo el metodo + tab
+              se realiza la importacoin automatica (Igualmente es importante
+              verificar)
+              <br /><br />
+              Paso 5 <br />
+              Indicar a que prueba se hace referencia (Describe) Esto se hace
+              para trabajar mas ordenados ya que si tenemos varias pruebas
+              ejecutandose saber en cual archivo especificamente tenemos un
+              error
+              <br />
+              <br />
+              Paso 6 <br />
+              Indicar el error, escribiendo el mensaje que recibiremos de la
+              prueba <br /><br />
+              Paso 7 <br />
+              Inicializacion <br /><br />
+              Paso 8 <br />
+              Estimulo <br /><br />
+              Paso 9 <br />
+              Observar que ocurre .toBe es un metodo dentro de JEST y
+              dependiendo que querramos hacer en nuetras pruebas eligiremos que
+              metodos ejecutar
+            </h4>
+          </div>
+          <div class="col-12 col-md-8">
+            <pre><code class="language-jsx"
+            style="white-space: pre-wrap; font-size:medium ;"> // Paso 1 Exportacion desde el archivo del componente 
+import React from "react";
+import PropTypes from "prop-types";
+const HolaMundo = ({ ladrido, parrafo }) =&gt; {
+return (
+  &lt;div&gt;
+    &lt;h1&gt; {ladrido} &lt;/h1&gt;
+    &lt;p&gt; {parrafo} &lt;/p&gt;
+  &lt;/div&gt;
+);
+};
+HolaMundo.propTypes = {
+ladrido: PropTypes.string.isRequired,
+};
+
+HolaMundo.defaultProps = {
+parrafo: "Soy un parrafo desde el componente",
+};
+export default HolaMundo;        </code></pre>
+            <br />
+            <pre><code class="language-jsx"
+              style="white-space: pre-wrap; font-size:medium ;"> // Paso 2  (creacion de estructura base)
+describe('', () => {
+  
+})          </code></pre>
+            <br />
+            <pre><code class="language-jsx"
+              style="white-space: pre-wrap; font-size:medium ;">// Paso 3 Importacion de Jest
+import '@tesing-library/jest-dom';
+
+// Paso 4 Importacion de metodos o propiedades
+import { getLadrido } from '../../src/HolaMundo.jsx';
+
+//Paso 5 Indicar de que archivo se realiza la prueba
+describe('Prueba del archivo miPrimeraPrueba.test.js ', () =&gt; {
+
+// Paso 6 Escribir mensaje que recibiremos de la prueba
+  test('Deben ser iguales los string ', () =&gt; {
+
+// Paso 7 Inicializacion
+    const saludo1 = 'Hola mundo';
+
+// Paso 8 Estimulo
+    const saludo2 = `Hola mundo`;
+
+// Paso 9 Observar que ocurre
+    expect(saludo1).toBe(saludo2);
+  });
+});                 </code></pre>
+          </div>
+        </div>
+      </div>
+    </main>
+    <!-- Main -->
+
+    <!-- Footer -->
+    <footer class="container-fluid py-5 text-center bg-dark text-white">
+      <div class="icons-social-networks">
+        <!--A-Instagram-->
+        <a
+          href="https://www.instagram.com/xkokev/"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="bg-instagram icon-svg-size ig-circle"
+          ><img src="../../img/instagram.svg" alt="Instagram"
+        /></a>
+        <!--Z-Instagram-->
+        <!--A-Telegram-->
+        <a
+          href="https://t.me/KevinCorrea"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="bg-twitter icon-svg-size mx-3 telegram-circle"
+          ><img src="../../img/telegram.svg" alt="telegram"
+        /></a>
+        <!--Z-Telegram-->
+        <!--A-Linkedin-->
+        <a
+          href="https://www.linkedin.com/in/kevincorreasuarez/"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="bg-linkedin icon-svg-size linkedin-circle"
+          ><img src="../../img/linkedin.svg" alt="Linkedin"
+        /></a>
+        <!--Z-Linkedin-->
+      </div>
+      <p class="horse-font">Hecho con ❤ Kevin</p>
+    </footer>
+    <!-- Footer -->
+
+    <!-- Scroll -->
+
+    <!-- Scroll -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW"
+      crossorigin="anonymous"
+    ></script>
+    <script src="../../js/prism.js"></script>
+    <script src="../../js/main.js"></script>
+    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+    <script src="https://unpkg.com/@lottiefiles/lottie-interactivity@latest/dist/lottie-interactivity.min.js"></script>
+
+    <script>
+      LottieInteractivity.create({
+        mode: 'scroll',
+        player: '#unoLottie',
+        actions: [
+          {
+            visibility: [0, 1],
+            type: 'seek',
+            frames: [0, 180],
+          },
+        ],
+      });
+    </script>
+    <script>
+      LottieInteractivity.create({
+        mode: 'scroll',
+        player: '#dosLottie',
+        actions: [
+          {
+            visibility: [0, 1],
+            type: 'seek',
+            frames: [0, 90],
+          },
+        ],
+      });
+    </script>
+    <script>
+      LottieInteractivity.create({
+        mode: 'scroll',
+        player: '#tresLottie',
+        actions: [
+          {
+            visibility: [0, 1],
+            type: 'seek',
+            frames: [0, 150],
+          },
+        ],
+      });
+    </script>
+  </body>
+</html>
