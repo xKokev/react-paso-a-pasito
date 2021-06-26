@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="../../css/main.css" />
+    <link rel="stylesheet" href="../../css/prism.css" />
+    <link rel="icon" type="image/png" href="../../img/cap.svg" />
+
+    <title>React tutoriales paso a paso</title>
+  </head>
+  <body class="f-bar">
+    <!-- navbar -->
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
+      <div class="container">
+        <div class="icons-social-networks">
+          <!--A-icon-->
+          <a
+            href="../../index.html"
+            rel="noopener noreferrer"
+            class="icon-svg-size"
+            ><img src="../../img/react.svg" alt="React"
+          /></a>
+          <!--Z-icon-->
+        </div>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav ms-auto mb-2 mb-lg-0 horse-font">
+            <li class="nav-item">
+              <a href="../../src/pages/1.html" class="nav-link"> 👈 </a>
+            </li>
+            <li class="nav-item">
+              <a href="#prop" class="nav-link active" aria-current="page">
+                Props
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="#envio-prop" class="nav-link"> Envio de prop </a>
+            </li>
+            <li class="nav-item">
+              <a href="#prop-types" class="nav-link"> PropTypes </a>
+            </li>
+            <li class="nav-item">
+              <a href="#default-props" class="nav-link"> DefaultProps </a>
+            </li>
+            <li class="nav-item">
+              <a
+                href="https://t.me/KevinCorrea"
+                class="nav-link"
+                target="_blank"
+              >
+                Telegram
+              </a>
+            </li>
+            <li class="nav-item">
+              <a
+                href="https://www.linkedin.com/in/kevincorreasuarez/"
+                class="nav-link"
+                target="_blank"
+              >
+                LinkedIn
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="../pages/3.html" class="nav-link"> 👉 </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <!-- navbar -->
+    <!-- Main -->
+    <main class="bg-dark text-white py-5" id="prop">
+      <div class="container">
+        <div class="text-center py-5 text-primary">
+          <i class="bi bi-lightning h4"></i>
+          <i class="bi bi-lightning h4 text-danger"></i>
+          <i class="bi bi-lightning h4"></i>
+        </div>
+        <h1 class="text-center horse-font">Ejemplos de pruebas en React</h1>
+        <br />
+        <p class="text-center horse-font">*</p>
+        <p />
+
+        <div class="row align-items-center">
+          <div class="col-12 col-md-4">
+            <lottie-player
+              id="unoLottie"
+              src="../../img/5/uno.json"
+              style="width: 340px; height: 340px"
+              >"></lottie-player
+            >
+          </div>
+
+          <div class="col-12 col-md-8">
+            <h2 class="text-center display-4 mb-5 horse-font">
+              Como usar toEqual en mis tests?
+            </h2>
+          </div>
+        </div>
+        <br />
+        <div class="row align-items-center">
+          <div class="col-12 col-md-4 horse-font">
+            <h3>toEqual para que sirve?</h3>
+            <hr />
+            <h4>
+              Segun la propia web oficial de Jest funciona para "para comparar
+              de forma recursiva todas las propiedades de las instancias de
+              objeto"
+              <br /><br />
+              Que quiere decir esto? <br />
+              Como vimos antes en las pruebas en React usamos la libreia Jest y
+              toEqual es unos de sus metodos, basicamente toEqual funciona para
+              comparar valores primitivos en los objetos o sea comparar si dos
+              objetos tienen las mismas propiedades (para string, numeros y
+              booleans hay un metodo especifico) Se usa para valores no
+              primitivos que ocupen un lugar especifico en memoria por ello esto
+              siempre nos dara falso <br />
+              {} === {} <br /><br />
+              En el ejemplo estoy evaluando que si el objeto tiene las mismas
+              propiedades y los mismos valores
+              <br />
+            </h4>
+          </div>
+          <div class="col-12 col-md-8">
+            <pre><code class="language-javaScript"
+              style="white-space: pre-wrap; font-size:medium ;">export const getUsuario = () =&gt; ({
+  id: '123ABC',
+  username: 'Rocky777',
+});</code></pre>
+            <br />
+            <pre><code class="language-javascript"
+          style="white-space: pre-wrap; font-size:medium ;">import '@tesing-library/jest-dom';
+import { getUsuario } from '../../src/1ejemplo.js';
+
+describe('Prueba del archivo 1ejemplo.js ejemplo 1 ', () =&gt; {
+  test('getUSuario  Debe de retornar un objeto', () =&gt; {
+    const userTest = {
+      id: '123ABC',
+      username: 'Rocky777',
+    };
+
+    const user = getUsuario();
+    expect(user).toEqual(userTest);
+  });
+}); </code></pre>
+          </div>
+        </div>
+      </div>
+    </main>
+    <!-- Main -->
+
+    <!-- Main -->
+    <main class="bg-dark text-white py-5" id="envio-prop">
+      <hr />
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-12 col-md-4 align-items-center">
+            <lottie-player
+              id="dosLottie"
+              src="../../img/5/dos.json"
+              style="width: 340px; height: 340px"
+              >"></lottie-player
+            >
+          </div>
+          <div class="col-12 col-md-8">
+            <h2 class="text-center display-4 mb-5 horse-font">
+              Ejemplo toEqual para test en React
+            </h2>
+          </div>
+        </div>
+        <br />
+        <div class="row align-items-center">
+          <div class="col-12 col-md-4 horse-font">
+            <h3>toEqual en un una funcion que envia un argumento</h3>
+            <hr />
+            <h4>
+              La pruebas deben ser faciles de leer y de escribir para obviamente
+              sean faciles de mantener <br /><br />
+              En esta prueba probaremos una funcion que recibe un argumento (No
+              varia mucho del ejemplo anterior)
+            </h4>
+          </div>
+          <div class="col-12 col-md-8">
+            <pre><code class="language-javascript"
+style="white-space: pre-wrap; font-size:medium ;">export const getUsuarioActivo = (nombre) =&gt; ({
+  id: '456ABC',
+  username: nombre,
+}); </code></pre>
+            <br />
+            <pre><code class="language-javascript"
+  style="white-space: pre-wrap; font-size:medium ;">import '@tesing-library/jest-dom';
+import { getUsuarioActivo } from '../../src/2ejemplo.js';
+
+describe('Prueba en el archivo ejemplo.js ejemplo 2', () => {
+  test('getUsuario debe retornar un objeto  ', () => {
+    const nombre = 'Kevin';
+    const user = getUsuarioActivo(nombre);
+
+    expect(user).toEqual({
+      id: '456ABC',
+      username: nombre,
+    });
+  });
+}); </code></pre>
+          </div>
+        </div>
+      </div>
+    </main>
+    <!-- Main -->
+
+    <!-- Main -->
+    <main class="bg-dark text-white py-5" id="default-props">
+      <hr />
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-12 col-md-4 align-items-center">
+            <lottie-player
+              id="tresLottie"
+              src="../../img/5/tres.json"
+              style="width: 340px; height: 340px"
+              >"></lottie-player
+            >
+          </div>
+          <div class="col-12 col-md-8">
+            <h2 class="text-center display-4 mb-5 horse-font">
+              toBe para pruebas en React
+            </h2>
+          </div>
+        </div>
+
+        <div class="row align-items-center">
+          <div class="col-12 col-md-4 horse-font">
+            <h3>Como usar toBe ?</h3>
+            <hr />
+            <h4>
+              Si necesitamos asegurarnos de que el valor devuelto sea igual a
+              algo para booleans, strings, numeros funcionaria correctamente es
+              muy similar al uso del triple igual en javascript vanila
+              <br /><br />
+              No usar toBe en numeros de coma flotante (float en Pascal o otros
+              lenguajes) <br /><br />
+              typeof en las pruebas se usa para verificar cual es el tipo de
+              variable <br />
+              <br />
+              Esta prueba es interesante ya que en un array probamos un string y
+              un numero
+            </h4>
+          </div>
+          <div class="col-12 col-md-8">
+            <pre><code class="language-javascript"
+              style="white-space: pre-wrap; font-size:medium ;">export const retornaArreglo = () => {
+  return ['ABC', 123];
+};  </code></pre>
+            <pre><code class="language-javascript"
+  style="white-space: pre-wrap; font-size:medium ;">import '@tesing-library/jest-dom';
+import { retornaArreglo } from '../../src/3ejemplo.js';
+describe('Prueba en el archivo ejemplo.js ejemplo 3', () =&gt; {
+  test('Debe de retornar un string y un numero ', () =&gt; {
+    const [letras, numeros] = retornaArreglo();
+    expect(letras).toBe('ABC');
+    expect(letras).toBe('string');
+    console.log(typeof numeros);
+    expect(numeros).toBe(123);
+    expect(numeros).toBe('number');
+  });
+});        </code></pre>
+          </div>
+        </div>
+        <h4 class="text-center">
+          Todas las pruebas se pueden adjuntar en un solo archivo solo que para
+          metodos didacticos se divide en varios tests
+        </h4>
+      </div>
+    </main>
+    <!-- Footer -->
+    <footer class="container-fluid py-5 text-center bg-dark text-white">
+      <div class="icons-social-networks">
+        <!--A-Instagram-->
+        <a
+          href="https://www.instagram.com/xkokev/"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="bg-instagram icon-svg-size ig-circle"
+          ><img src="../../img/instagram.svg" alt="Instagram"
+        /></a>
+        <!--Z-Instagram-->
+        <!--A-Telegram-->
+        <a
+          href="https://t.me/KevinCorrea"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="bg-twitter icon-svg-size mx-3 telegram-circle"
+          ><img src="../../img/telegram.svg" alt="telegram"
+        /></a>
+        <!--Z-Telegram-->
+        <!--A-Linkedin-->
+        <a
+          href="https://www.linkedin.com/in/kevincorreasuarez/"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="bg-linkedin icon-svg-size linkedin-circle"
+          ><img src="../../img/linkedin.svg" alt="Linkedin"
+        /></a>
+        <!--Z-Linkedin-->
+      </div>
+      <p class="horse-font">Hecho con ❤ Kevin</p>
+    </footer>
+    <!-- Footer -->
+
+    <!-- Scroll -->
+
+    <!-- Scroll -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW"
+      crossorigin="anonymous"
+    ></script>
+    <script src="../../js/prism.js"></script>
+    <script src="../../js/main.js"></script>
+    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+    <script src="https://unpkg.com/@lottiefiles/lottie-interactivity@latest/dist/lottie-interactivity.min.js"></script>
+
+    <script>
+      LottieInteractivity.create({
+        mode: 'scroll',
+        player: '#unoLottie',
+        actions: [
+          {
+            visibility: [0, 1],
+            type: 'seek',
+            frames: [0, 60],
+          },
+        ],
+      });
+    </script>
+    <script>
+      LottieInteractivity.create({
+        mode: 'scroll',
+        player: '#dosLottie',
+        actions: [
+          {
+            visibility: [0, 1],
+            type: 'seek',
+            frames: [0, 60],
+          },
+        ],
+      });
+    </script>
+    <script>
+      LottieInteractivity.create({
+        mode: 'scroll',
+        player: '#tresLottie',
+        actions: [
+          {
+            visibility: [0, 1],
+            type: 'seek',
+            frames: [0, 60],
+          },
+        ],
+      });
+    </script>
+  </body>
+</html>
