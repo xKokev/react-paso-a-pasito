@@ -304,6 +304,77 @@ describe('Pruebas en <PrimeraApp/> ', () => {
         <br />
       </div>
     </main>
+    <!-- Main -->
+    <main class="bg-dark text-white py-5" id="ejemplo">
+      <hr />
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-12 col-md-4 align-items-center">
+            <lottie-player id="cincoLottie" src="https://assets2.lottiefiles.com/packages/lf20_5f2kwbj1.json" style="width:340px; height: 340px;">"></lottie-player>
+
+          </div>
+          <div class="col-12 col-md-8">
+            <h2 class="text-center display-4 mb-5 horse-font">
+              Pruebas con la nueva configuracion
+            </h2>
+          </div>
+        </div>
+
+        <div class="row align-items-center">
+          <div class="col-12 col-md-4 horse-font">
+            <h3>Una prueba rapida en el HTML</h3>
+            <hr />
+            <h4>
+              Vamos a analizar el archivo <code>PrimeraApp.js </code> y
+              probaremos el Subtitulo que esta adentro de un parrafo y para ello
+              usaremos una constante llamada textoParrafo <br /><br />
+              Como solo hay un parrafo se usa 'p' Si hubiera mas de un parrafo
+              recibiria un array con los parrafos <br /><br />
+              Ahora para buscar por id se usaria
+              <code> #idQueIndiquemos </code> <br /><br />
+              Ahora para buscar por class se usaria
+              <code> .claseQueIndiquemos' </code>
+            </h4>
+          </div>
+          <div class="col-12 col-md-8">
+            <pre><code class="language-jsx"
+              style="white-space: pre-wrap; font-size:medium ;">import React from 'react';
+
+const PrimeraApp = ({ saludo, subtitulo }) => {
+  return (
+    <>
+      <h1>{saludo}</h1>
+      <p>{subtitulo}</p>
+    </>
+  );
+};
+PrimeraApp.propTypes = {
+  saludo: PropTypes.string.isRequiered,
+};
+PrimeraApp.defaultProps = {
+  subtitulo: 'Soy un subtitulo',
+};
+
+export default PrimeraApp;               </code></pre> <br>
+<pre><code class="language-javascript"
+  style="white-space: pre-wrap; font-size:medium ;">import React from 'react';
+import PrimeraApp from './8PrimeraApp';
+describe('Pruebas en <PrimeraApp/>', () => {
+  test('Deberia de mostrar el subtitulo enviado por props', () => {
+    const saludo = 'Hola soy Rocky';
+    const subTitulo = 'Soy un subtitulo';
+    const wrapper = shallow(
+      <PrimeraApp saludo={saludo} subtitulo={subtitulo} />
+    );
+    const textoParrafo = wrapper.find('p').text();
+    expect(textoParrafo).toBe(subTitulo);
+  });
+});      </code></pre>
+          </div>
+        </div>
+        <br />
+      </div>
+    </main>
 
     <!-- Footer -->
     <footer class="container-fluid py-5 text-center bg-dark text-white">
@@ -404,5 +475,18 @@ describe('Pruebas en <PrimeraApp/> ', () => {
         ],
       });
     </script>
+    <script>
+      LottieInteractivity.create({
+          mode:"scroll",
+          player:'#cincoLottie',
+          actions: [
+              {
+                  visibility:[0,1],
+                  type: "seek",
+                  frames: [0, 258],
+              },
+          ]  
+      });
+      </script>
   </body>
 </html>
