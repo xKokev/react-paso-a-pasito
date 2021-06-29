@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="../../css/main.css" />
+    <link rel="stylesheet" href="../../css/prism.css" />
+    <link rel="icon" type="image/png" href="../../img/cap.svg" />
+
+    <title>React tutoriales paso a paso</title>
+  </head>
+  <body class="f-bar">
+    <!-- navbar -->
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
+      <div class="container">
+        <div class="icons-social-networks">
+          <!--A-icon-->
+          <a
+            href="../../index.html"
+            rel="noopener noreferrer"
+            class="icon-svg-size"
+            ><img src="../../img/react.svg" alt="React"
+          /></a>
+          <!--Z-icon-->
+        </div>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav ms-auto mb-2 mb-lg-0 horse-font">
+            <li class="nav-item">
+              <a href="../../src/pages/7.html" class="nav-link"> 👈 </a>
+            </li>
+            <li class="nav-item">
+              <a href="#setupTest" class="nav-link active" aria-current="page">
+                setupTest.js
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="#enzyme" class="nav-link"> Enzyme </a>
+            </li>
+            <li class="nav-item">
+              <a href="#to-json" class="nav-link"> to json </a>
+            </li>
+            <li class="nav-item">
+              <a href="#ejemplo" class="nav-link"> Ejemplo </a>
+            </li>
+            <li class="nav-item">
+              <a
+                href="https://t.me/KevinCorrea"
+                class="nav-link"
+                target="_blank"
+              >
+                Telegram
+              </a>
+            </li>
+            <li class="nav-item">
+              <a
+                href="https://www.linkedin.com/in/kevincorreasuarez/"
+                class="nav-link"
+                target="_blank"
+              >
+                LinkedIn
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="../pages/9.html" class="nav-link"> 👉 </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <!-- navbar -->
+    <!-- Main -->
+    <main class="bg-dark text-white py-5" id="setupTest">
+      <div class="container">
+        <div class="text-center py-5 text-primary">
+          <i class="bi bi-lightning h4"></i>
+          <i class="bi bi-lightning h4 text-danger"></i>
+          <i class="bi bi-lightning h4"></i>
+        </div>
+        <h1 class="text-center horse-font">
+          Configuracion setupTest.js y Enzyme
+        </h1>
+        <br />
+        <p class="text-center horse-font">*</p>
+
+        <div class="row align-items-center">
+          <div class="col-12 col-md-4">
+            <lottie-player
+              id="unoLottie"
+              src="https://assets5.lottiefiles.com/packages/lf20_wrd15j2b.json"
+              style="width: 340px; height: 340px"
+              >"></lottie-player
+            >
+          </div>
+
+          <div class="col-12 col-md-8">
+            <h2 class="text-center display-4 mb-5 horse-font">
+              setupTest.js Extend Expect
+            </h2>
+          </div>
+        </div>
+        <br />
+        <div class="row align-items-center">
+          <div class="col-12 col-md-4 horse-font">
+            <h3>Configuracion setupTest.js</h3>
+            <hr />
+            <h4>
+              Para evitar problemas crearemos un archivo llamado
+              <code>setupTest.js</code> que ira en la carpeta <code>src</code>
+              <br /><br />
+              Nota: Se puede trabajar de esta manera pero se hace complicado por
+              lo que se recomineda usar Enzyme (hay que cambiar el archivo
+              setupTest dependiendo cual metodo querramos usar)
+            </h4>
+          </div>
+          <div class="col-12 col-md-8">
+            <pre><code class="language-javascript"
+          style="white-space: pre-wrap; font-size:medium ;">/// Trabajando directo con jest(sin enzyme)
+import '@testing-library/jest-dom/extend-expect';
+           </code></pre>
+          </div>
+        </div>
+      </div>
+    </main>
+    <!-- Main -->
+
+    <!-- Main -->
+    <main class="bg-dark text-white py-5" id="enzyme">
+      <hr />
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-12 col-md-4 align-items-center">
+            <lottie-player
+              id="dosLottie"
+              src="https://assets8.lottiefiles.com/packages/lf20_gSemY3.json"
+              style="width: 340px; height: 340px"
+              >"></lottie-player
+            >
+          </div>
+          <div class="col-12 col-md-8">
+            <h2 class="text-center display-4 mb-5 horse-font">
+              Enzyme para las pruebas en React
+            </h2>
+          </div>
+        </div>
+        <br />
+        <div class="row align-items-center">
+          <div class="col-12 col-md-4 horse-font">
+            <h3>Instalacion de Enzyme</h3>
+            <hr />
+            <h4>
+              En nuestra carpeta ejecutar en la terminal <br />
+              <code> npm i --save-dev enzyme enzyme-adapter-react-16 </code>
+              <br /><br />Se debe editar de esta manera el archivo setupTest.js
+              para trabajar con Enzyme (de igual manera es recomendable revisar
+              la documentacion por si realizan algun cambio)
+            </h4>
+          </div>
+          <div class="col-12 col-md-8">
+            <pre><code class="language-javascript"
+              style="white-space: pre-wrap; font-size:medium ;">import Enzyme from 'enzyme';
+import Adapter from 'enzyme-adapter-react-16';
+
+Enzyme.configure({ adapter: new Adapter() });
+ </code></pre>
+          </div>
+        </div>
+        <br />
+        <h4 class="text-center">
+          <a href="https://enzymejs.github.io/enzyme/">Pagina de Enzyme </a
+          ><br />
+          Podemos trabajar con distintas bibliotecas pero nosotros la usaremos
+          junto a Jest <br />Dentro de nuestra carpeta test se creara otra
+          carpeta llamada
+          <code> _snapshots_ </code>
+          y no debe ser modificada.
+        </h4>
+      </div>
+    </main>
+    <!-- Main -->
+    <main class="bg-dark text-white py-5" id="to-json">
+      <hr />
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-12 col-md-4 align-items-center">
+            <lottie-player
+              id="tresLottie"
+              src="https://assets10.lottiefiles.com/packages/lf20_YE8NQM.json"
+              style="width: 340px; height: 340px"
+              >"></lottie-player
+            >
+          </div>
+          <div class="col-12 col-md-8">
+            <h2 class="text-center display-4 mb-5 horse-font">
+              Enzyme to json
+            </h2>
+          </div>
+        </div>
+
+        <div class="row align-items-center">
+          <div class="col-12 col-md-4 horse-font">
+            <h3>Instalacion y configuracion de Enzyme to json</h3>
+            <hr />
+            <h4>
+              Se debe verificar la documentacion y correr en la terminal dentro
+              de la carpeta del proyecto <br />
+              <code> npm install --save-dev enzyme-to-json </code>
+              <br />
+              Con esta instalacion via terminal no se instalara de manera global
+              en nuestro sistemas solo en el proyecto Una vez instalado se debe
+              modificar el archivo setupTest y añadir unas cuantas lineas (esta
+              explicado tambien en la documentacion de enzyme-to-json) Quedaria
+              tal que asi:
+            </h4>
+          </div>
+          <div class="col-12 col-md-8">
+            <pre><code class="language-javascript"
+              style="white-space: pre-wrap; font-size:medium ;">import Enzyme from 'enzyme';
+import Adapter from 'enzyme-adapter-react-16';
+import { createSerializer } from 'enzyme-to-json';
+
+Enzyme.configure({ adapter: new Adapter() });
+expect.addSnapshotSerializer(createSerializer({ mode: 'deep' }));
+               </code></pre>
+          </div>
+        </div>
+        <br />
+        <h4 class="text-center">
+          Pagina de
+          <a href="https://www.npmjs.com/package/enzyme-to-json"
+            >Enzyme to JSON
+          </a>
+        </h4>
+      </div>
+    </main>
+    <!-- Main -->
+    <main class="bg-dark text-white py-5" id="ejemplo">
+      <hr />
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-12 col-md-4 align-items-center">
+            <lottie-player
+              id="cuatroLottie"
+              src="https://assets7.lottiefiles.com/packages/lf20_BcK1WH.json"
+              style="width: 340px; height: 340px"
+              >"></lottie-player
+            >
+          </div>
+          <div class="col-12 col-md-8">
+            <h2 class="text-center display-4 mb-5 horse-font">
+              Prueba con Enzyme configurado
+            </h2>
+          </div>
+        </div>
+
+        <div class="row align-items-center">
+          <div class="col-12 col-md-4 horse-font">
+            <h3>Ejemplo de prueba con Enzyme to Json</h3>
+            <hr />
+            <h4>
+              Una vez todo ya configurado (recordar verificar en las web
+              oficiales para trabajar lo mas actualizados posibles y evitar
+              errores) <br />
+              En esta prueba estaremos usando <code>shallow</code> <br />
+              es un metodo de Enzyme y por eso necesitamos importarlo como en el
+              archivo
+            </h4>
+          </div>
+          <div class="col-12 col-md-8">
+            <pre><code class="language-javascript"
+              style="white-space: pre-wrap; font-size:medium ;">import React from 'react';
+import '@testing-library/jest-dom';
+import { shallow } from 'enzyme';
+
+import PrimeraApp from './8PrimeraApp';
+describe('Pruebas en <PrimeraApp/> ', () => {
+  test('Debe de mostrar <PrimeraApp/> correctamente ', () => {
+    const saludo = 'Hola soy Rocky';
+    const wrapper = shallow(<PrimeraApp saludo={saludo} />);
+    expect(wrapper).toMatchSnapshot();
+  });
+}); </code></pre>
+          </div>
+        </div>
+        <br />
+      </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="container-fluid py-5 text-center bg-dark text-white">
+      <div class="icons-social-networks">
+        <!--A-Instagram-->
+        <a
+          href="https://www.instagram.com/xkokev/"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="bg-instagram icon-svg-size ig-circle"
+          ><img src="../../img/instagram.svg" alt="Instagram"
+        /></a>
+        <!--Z-Instagram-->
+        <!--A-Telegram-->
+        <a
+          href="https://t.me/KevinCorrea"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="bg-twitter icon-svg-size mx-3 telegram-circle"
+          ><img src="../../img/telegram.svg" alt="telegram"
+        /></a>
+        <!--Z-Telegram-->
+        <!--A-Linkedin-->
+        <a
+          href="https://www.linkedin.com/in/kevincorreasuarez/"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="bg-linkedin icon-svg-size linkedin-circle"
+          ><img src="../../img/linkedin.svg" alt="Linkedin"
+        /></a>
+        <!--Z-Linkedin-->
+      </div>
+      <p class="horse-font">Hecho con ❤ Kevin</p>
+    </footer>
+    <!-- Footer -->
+
+    <!-- Scroll -->
+
+    <!-- Scroll -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW"
+      crossorigin="anonymous"
+    ></script>
+    <script src="../../js/prism.js"></script>
+    <script src="../../js/main.js"></script>
+    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+    <script src="https://unpkg.com/@lottiefiles/lottie-interactivity@latest/dist/lottie-interactivity.min.js"></script>
+    <script>
+      LottieInteractivity.create({
+        mode: 'scroll',
+        player: '#unoLottie',
+        actions: [
+          {
+            visibility: [0, 1],
+            type: 'seek',
+            frames: [0, 262],
+          },
+        ],
+      });
+    </script>
+    <script>
+      LottieInteractivity.create({
+        mode: 'scroll',
+        player: '#dosLottie',
+        actions: [
+          {
+            visibility: [0, 1],
+            type: 'seek',
+            frames: [0, 250],
+          },
+        ],
+      });
+    </script>
+    <script>
+      LottieInteractivity.create({
+        mode: 'scroll',
+        player: '#tresLottie',
+        actions: [
+          {
+            visibility: [0, 1],
+            type: 'seek',
+            frames: [0, 82],
+          },
+        ],
+      });
+    </script>
+    <script>
+      LottieInteractivity.create({
+        mode: 'scroll',
+        player: '#cuatroLottie',
+        actions: [
+          {
+            visibility: [0, 1],
+            type: 'seek',
+            frames: [0, 125],
+          },
+        ],
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="../../css/main.css" />
+    <link rel="stylesheet" href="../../css/prism.css" />
+    <link rel="icon" type="image/png" href="../../img/cap.svg" />
+
+    <title>React tutoriales paso a paso</title>
+  </head>
+  <body class="f-bar">
+    <!-- navbar -->
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
+      <div class="container">
+        <div class="icons-social-networks">
+          <!--A-icon-->
+          <a
+            href="../../index.html"
+            rel="noopener noreferrer"
+            class="icon-svg-size"
+            ><img src="../../img/react.svg" alt="React"
+          /></a>
+          <!--Z-icon-->
+        </div>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav ms-auto mb-2 mb-lg-0 horse-font">
+            <li class="nav-item">
+              <a href="../../src/pages/6.html" class="nav-link"> 👈 </a>
+            </li>
+            <li class="nav-item">
+              <a href="#promesas" class="nav-link active" aria-current="page">
+                Promesas
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="#async-await" class="nav-link"> Async-await </a>
+            </li>
+
+            <li class="nav-item">
+              <a
+                href="https://t.me/KevinCorrea"
+                class="nav-link"
+                target="_blank"
+              >
+                Telegram
+              </a>
+            </li>
+            <li class="nav-item">
+              <a
+                href="https://www.linkedin.com/in/kevincorreasuarez/"
+                class="nav-link"
+                target="_blank"
+              >
+                LinkedIn
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="../pages/8.html" class="nav-link"> 👉 </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <!-- navbar -->
+    <!-- Main -->
+    <main class="bg-dark text-white py-5" id="promesas">
+      <div class="container">
+        <div class="text-center py-5 text-primary">
+          <i class="bi bi-lightning h4"></i>
+          <i class="bi bi-lightning h4 text-danger"></i>
+          <i class="bi bi-lightning h4"></i>
+        </div>
+        <h1 class="text-center horse-font">
+          Pruebas en componentes asincronos en React
+        </h1>
+        <br />
+        <p class="text-center horse-font">*</p>
+
+        <div class="row align-items-center">
+          <div class="col-12 col-md-4">
+            <lottie-player
+              id="unoLottie"
+              src="../../img/7/1.json"
+              style="width: 340px; height: 340px"
+              >"></lottie-player
+            >
+          </div>
+
+          <div class="col-12 col-md-8">
+            <h2 class="text-center display-4 mb-5 horse-font">
+              Realizacion de test expresiones asincrona (Promesas)
+            </h2>
+          </div>
+        </div>
+        <br />
+        <div class="row align-items-center">
+          <div class="col-12 col-md-4 horse-font">
+            <h3>Done en los test</h3>
+            <hr />
+            <h4>
+              El codigo se ejecuta de manera lineal, por lo tanto debemos
+              modificar el archivo de pruebas cuando trabajemos pruebas
+              asincronas <br /><br />
+              Debemos enviar el argumento <code> done </code> al callback en el
+              archivo del test <br /><br />
+              La palabra reservada <code> done </code> busca donde hay un expect
+              o en su defecto otro done() para ejecutar el proceso asincrono o
+              espera alrededor de 5 segundos <br /><br />
+              Nota cuando trabajemos con expresiones asincronas despues del
+              expect es importante escribir el done para decirle al test que ya
+              acabamos el proceso y no esperamos mas tareas asincronas.
+              <br /><br />
+              Si se rechaza la promesa, la prueba fallará automáticamente.
+              <br /><br />También puede usar el comparador .resolves en nuestra
+              declaración de espera, y Jest esperará a que se resuelva esa
+              promesa. Si se rechaza la promesa, la prueba fallará
+              automáticamente. <br />Si espera que una promesa sea rechazada,
+              usaremos el comparador .rejects. Si se cumple la promesa, la
+              prueba fallará automáticamente.
+            </h4>
+          </div>
+          <div class="col-12 col-md-8">
+            <pre><code class="language-jsx"
+          style="white-space: pre-wrap; font-size:medium ;">import { getHeroeById } from '../../src/componenteHeroes.jsx';
+
+export const getHeroeByIdAsync = (id) => {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      const p1 = getHeroeById(id);
+      if (p1) {
+        resolve(p1);
+      } else {
+        reject('No se pudo encontrar el heroe');
+      }
+    }, 1500);
+  });
+}; </code></pre>
+            <br />
+            <pre><code class="language-javascript"
+  style="white-space: pre-wrap; font-size:medium ;">import { getHeroeByIdAsync } from '../../src/asincronia.jsx';
+import heroes from './5heroes.js';
+
+describe('Prueba con promesas del archivo 6asincronia.js', () => {
+  test('getHeroeByidAsync debe retornar un heroe async ', (done) => {
+    const id = 1;
+    getHeroeByIdAsync(id).then((heroe) => {
+      expect(heroe).toBe(heroes[0]);
+      done();
+    });
+  });
+
+  test('Debe obtener un error si el id del heroe no existe  ', (done) => {
+    const id = 10;
+    getHeroeByIdAsync(id).catch((error) => {
+      expect(error).toBe('No se pudo encontrar el heroe');
+      done();
+    });
+  });
+});   </code></pre>
+          </div>
+        </div>
+      </div>
+    </main>
+    <!-- Main -->
+    <main class="bg-dark text-white py-5" id="async-await">
+      <hr />
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-12 col-md-4 align-items-center">
+            <lottie-player
+              id="dosLottie"
+              src="../../img/7/2.json"
+              style="width: 340px; height: 340px"
+              >"></lottie-player
+            >
+          </div>
+          <div class="col-12 col-md-8">
+            <h2 class="text-center display-4 mb-5 horse-font">
+              Realizacion de test expresiones asincrona (Async-Await)
+            </h2>
+          </div>
+        </div>
+        <br />
+        <div class="row align-items-center">
+          <div class="col-12 col-md-4 horse-font">
+            <h3>Async-Await en las pruebas</h3>
+            <hr />
+            <h4>
+              Para escribir una prueba asíncrona, usaremos la palabra clave
+              <code>async</code>
+              delante de la función como en el ejemplo <br /><br />
+              En este caso haremos un par de pruebas muy sencillas, <br /><br />
+              Caso 1 <br />
+              Verificaremos que nos llega un string <br />
+              Caso 2 <br />
+              Verficaremos que es una conexion segura <br /><br />
+              Es importante aclarar que se puede combinar Async-Await con
+              <code>rejects</code> <code>resolves</code> de las promesas
+              <br /><br />En estos casos, <code> async </code>
+              <code>await</code> no es mas que azúcar sintáctico
+              <br /><br />Ninguno de estos casos es superior a los demás, y se
+              pueden mezclar y combinar, solo dependera de nuestras necesidades.
+              <br />Tambien se podria trabajar con callbacks en estos test
+              asincronos
+            </h4>
+          </div>
+          <div class="col-12 col-md-8">
+            <pre><code class="language-jsx"
+              style="white-space: pre-wrap; font-size:medium ;">export const getImagen = async () => {
+  try {
+    const apiKey = 'f89u7f83h389f89afy8a2n435da6F';
+    const resp = await fetch(
+      `http://api.giphy.com/v1/gifs/ramdom?api_key=${apiKey}`
+    );
+    const { data } = await resp.json();
+    const { url } = data.images.original;
+    // const img = document.createElement('img');
+    // img.src = url;
+    // document.body.append(img);
+    return url;
+  } catch (error) {
+    return 'No existe';
+  }
+};</code></pre>
+            <br />
+            <pre><code class="language-javascript"
+  style="white-space: pre-wrap; font-size:medium ;">import { getImagen } from './7async-await';
+
+describe('Prueba con Async-Await y Fetch en el archivo 7async-await.js', async () => {
+  test('Debe de retornar el url de la imagen', () => {
+    const url = await getImagen();
+    //Caso 1
+    expect(typeof url).toBe('string');
+    // Caso 2
+    expect(url.includes('https://')).toBe(true);
+  });
+});</code></pre>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="container-fluid py-5 text-center bg-dark text-white">
+      <div class="icons-social-networks">
+        <!--A-Instagram-->
+        <a
+          href="https://www.instagram.com/xkokev/"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="bg-instagram icon-svg-size ig-circle"
+          ><img src="../../img/instagram.svg" alt="Instagram"
+        /></a>
+        <!--Z-Instagram-->
+        <!--A-Telegram-->
+        <a
+          href="https://t.me/KevinCorrea"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="bg-twitter icon-svg-size mx-3 telegram-circle"
+          ><img src="../../img/telegram.svg" alt="telegram"
+        /></a>
+        <!--Z-Telegram-->
+        <!--A-Linkedin-->
+        <a
+          href="https://www.linkedin.com/in/kevincorreasuarez/"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="bg-linkedin icon-svg-size linkedin-circle"
+          ><img src="../../img/linkedin.svg" alt="Linkedin"
+        /></a>
+        <!--Z-Linkedin-->
+      </div>
+      <p class="horse-font">Hecho con ❤ Kevin</p>
+    </footer>
+    <!-- Footer -->
+
+    <!-- Scroll -->
+
+    <!-- Scroll -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW"
+      crossorigin="anonymous"
+    ></script>
+    <script src="../../js/prism.js"></script>
+    <script src="../../js/main.js"></script>
+    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+    <script src="https://unpkg.com/@lottiefiles/lottie-interactivity@latest/dist/lottie-interactivity.min.js"></script>
+    <script>
+      LottieInteractivity.create({
+        mode: 'scroll',
+        player: '#unoLottie',
+        actions: [
+          {
+            visibility: [0, 1],
+            type: 'seek',
+            frames: [0, 193],
+          },
+        ],
+      });
+    </script>
+    <script>
+      LottieInteractivity.create({
+        mode: 'scroll',
+        player: '#dosLottie',
+        actions: [
+          {
+            visibility: [0, 1],
+            type: 'seek',
+            frames: [50, 241],
+          },
+        ],
+      });
+    </script>
+  </body>
+</html>
