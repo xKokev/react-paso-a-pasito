@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="../../css/main.css" />
+    <link rel="stylesheet" href="../../css/prism.css" />
+    <link rel="icon" type="image/png" href="../../img/cap.svg" />
+
+    <title>React tutoriales paso a paso</title>
+  </head>
+  <body class="f-bar">
+    <!-- navbar -->
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
+      <div class="container">
+        <div class="icons-social-networks">
+          <!--A-icon-->
+          <a
+            href="../../index.html"
+            rel="noopener noreferrer"
+            class="icon-svg-size"
+            ><img src="../../img/react.svg" alt="React"
+          /></a>
+          <!--Z-icon-->
+        </div>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav ms-auto mb-2 mb-lg-0 horse-font">
+            <li class="nav-item">
+              <a href="../../src/pages/9.html" class="nav-link"> 👈 </a>
+            </li>
+            <li class="nav-item">
+              <a
+                href="#recomendaciones"
+                class="nav-link active"
+                aria-current="page"
+              >
+                Recomendaciones
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="#imp-bad" class="nav-link"> Array (impresion BAD) </a>
+            </li>
+            <li class="nav-item">
+              <a href="#key" class="nav-link"> Key </a>
+            </li>
+            <li class="nav-item">
+              <a href="#imp-good" class="nav-link">Array (impresion GOOD) </a>
+            </li>
+            <li class="nav-item">
+              <a href="#agregar" class="nav-link">Agregar Elementos</a>
+            </li>
+            <li class="nav-item">
+              <a
+                href="https://t.me/KevinCorrea"
+                class="nav-link"
+                target="_blank"
+              >
+                Telegram
+              </a>
+            </li>
+            <li class="nav-item">
+              <a
+                href="https://www.linkedin.com/in/kevincorreasuarez/"
+                class="nav-link"
+                target="_blank"
+              >
+                LinkedIn
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="../pages/11.html" class="nav-link"> 👉 </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <!-- navbar -->
+    <!-- Main -->
+    <main class="bg-dark text-white py-5" id="recomendaciones">
+      <div class="container">
+        <div class="text-center py-5 text-primary">
+          <i class="bi bi-lightning h4"></i>
+          <i class="bi bi-lightning h4 text-danger"></i>
+          <i class="bi bi-lightning h4"></i>
+        </div>
+        <h1 class="text-center horse-font">Proyecto buscador de Gifs 1</h1>
+        <br />
+        <p class="text-center horse-font">*</p>
+
+        <div class="row align-items-center">
+          <div class="col-12 col-md-4">
+            <lottie-player
+              id="unoLottie"
+              src="https://assets9.lottiefiles.com/packages/lf20_wowt8xie.json"
+              style="width: 340px; height: 340px"
+              >"></lottie-player
+            >
+          </div>
+
+          <div class="col-12 col-md-8">
+            <h2 class="text-center display-4 mb-5 horse-font">
+              Consejos para estructura de un proyecto en React
+            </h2>
+          </div>
+        </div>
+        <br />
+        <div class="row align-items-center">
+          <div class="col-12 col-md-4 horse-font">
+            <h3>Recomendaciones + archivos base</h3>
+            <hr />
+            <h4>
+              Recomendaciones para la extructura de proyectos en React
+
+              <a
+                href="https://medium.com/hackernoon/structuring-projects-and-naming-components-in-react-1261b6e18d76
+"
+                >Aqui</a
+              >
+              <br />
+              <br />
+              Tambien crearemos nuestra propia api key de Giphy <br /><br />
+              Tambieen crearemos el archivo <code> GifExpert.jsx </code>
+            </h4>
+          </div>
+          <div class="col-12 col-md-8">
+            <pre><code class="language-javascript"
+          style="white-space: pre-wrap; font-size:medium ;">// Archivo Index.js
+import React from 'react';
+import ReactDOM from 'react-dom';
+import GifExpertApp from './1GifExpertApp';
+import '.index.css';
+
+ReactDOM.render(<GifExpertApp />, document.getElementById('root')); </code></pre>
+          </div>
+        </div>
+      </div>
+    </main>
+    <!-- Main -->
+
+    <!-- Main -->
+    <main class="bg-dark text-white py-5" id="imp-bad">
+      <hr />
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-12 col-md-4 align-items-center">
+            <lottie-player
+              id="dosLottie"
+              src="https://assets9.lottiefiles.com/packages/lf20_zxfaytb8.json"
+              style="width: 340px; height: 340px"
+              >"></lottie-player
+            >
+          </div>
+          <div class="col-12 col-md-8">
+            <h2 class="text-center display-4 mb-5 horse-font">
+              Como no imprimir un array dentro del HTML
+            </h2>
+          </div>
+        </div>
+        <br />
+        <div class="row align-items-center">
+          <div class="col-12 col-md-4 horse-font">
+            <h3>Directamente imprimir el array</h3>
+            <hr />
+            <h4>
+              Si usamos este codigo con la esperanza de imprimir el array
+              directamente en nuestro DOM tendremos un problema <br />
+              <br />
+              Se imprimiria de esta manera, uno al lado del otro asi:
+              <br /><br />
+              <code> One PunchSamurai XDragon Ball </code> <br /><br />
+              Y no es como queremos que se vea
+            </h4>
+          </div>
+          <div class="col-12 col-md-8">
+            <pre><code class="language-jsx"
+              style="white-space: pre-wrap; font-size:medium ;">// Archivo GifExpert.jsx
+import React from 'react';
+
+const GifExpertApp = () =&gt; {
+  const categories = ['One Punch', 'Samurai X', 'Dragon Ball'];
+
+  return (
+    &lt;&gt;
+      &lt;h2&gt;GifExpertApp &lt;/h2&gt;
+      &lt;hr /&gt;
+      {categories}
+    &lt;/&gt;
+  );
+};
+
+export default GifExpertApp;                </code></pre>
+          </div>
+        </div>
+      </div>
+    </main>
+    <!-- Main -->
+    <main class="bg-dark text-white py-5" id="key">
+      <hr />
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-12 col-md-4 align-items-center">
+            <lottie-player
+              id="tresLottie"
+              src="https://assets9.lottiefiles.com/packages/lf20_zfQPDA.json"
+              style="width: 340px; height: 340px"
+              >"></lottie-player
+            >
+          </div>
+          <div class="col-12 col-md-8">
+            <h2 class="text-center display-4 mb-5 horse-font">
+              Por que trabajar con el key? y no con los valores del indice de un
+              array?
+            </h2>
+          </div>
+        </div>
+
+        <div class="row align-items-center">
+          <div class="col-12 col-md-4 horse-font">
+            <h3>Uso del Key = {indice}</h3>
+            <hr />
+            <h4>
+              Esa key sirve para que React sepa cual es el elemento que esta
+              iterando y si ese key cambia o necesita hacer renderizaciones,
+              borrar o agregar; se basara en el Key <br />
+              (Eso lo hace react internamente ) <br /><br />
+              Al ser muy volatil el Key no es recomendable usarlo en este caso
+              porque puede aumentar o disminuir la longitud del array por lo que
+              podriamos tener errores <br /><br />
+              Esto porque cada uno de sus elementos debe de tener una llave
+              unica
+            </h4>
+          </div>
+          <div class="col-12 col-md-8">
+            <pre><code class="language-jsx"
+              style="white-space: pre-wrap; font-size:medium ;">// Archivo GifExpert.jsx
+import React from 'react';
+
+const GifExpertApp = () =&gt; {
+  const categories = ['One Punch', 'Samurai X', 'Dragon Ball'];
+
+  return (
+    &lt;&gt;
+      GifExpertApp
+      &lt;h2&gt;GifExpertApp &lt;/h2&gt;
+      &lt;hr /&gt;
+      &lt;ol&gt;
+        {categories.map((category, indice) =&gt; {
+          return &lt;li key={indice}&gt; Hola &lt;/li&gt;;
+        })}
+      &lt;/ol&gt;
+    &lt;/&gt;
+  );
+};
+
+export default GifExpertApp;            </code></pre>
+          </div>
+        </div>
+      </div>
+    </main>
+    <!-- Main -->
+    <main class="bg-dark text-white py-5" id="imp-good">
+      <hr />
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-12 col-md-4 align-items-center">
+            <lottie-player
+              id="cuatroLottie"
+              src="https://assets8.lottiefiles.com/packages/lf20_sRPw3n.json"
+              style="width: 340px; height: 340px"
+              >"></lottie-player
+            >
+          </div>
+          <div class="col-12 col-md-8">
+            <h2 class="text-center display-4 mb-5 horse-font">
+              Como imprimir correctamente el array dentro del HTML
+            </h2>
+          </div>
+        </div>
+
+        <div class="row align-items-center">
+          <div class="col-12 col-md-4 horse-font">
+            <h3>Arrays en el DOM</h3>
+            <hr />
+            <h4>
+              Sabemos que un array viene definido por su (Clave,Valor) <br />
+              <br />
+              Teniendo en cuenta que el valor puede ir mutando (lo cual da
+              errores) <br />
+              <br />
+              Podemos evitarnos problemas asi <br />
+              Nota en el valor key se debe insertar el id unico y en el array no
+              debe haber elementos duplicados
+            </h4>
+          </div>
+          <div class="col-12 col-md-8">
+            <pre><code class="language-jsx"
+              style="white-space: pre-wrap; font-size:medium ;">// Archivo GifExpert.jsx
+import React from 'react';
+
+const GifExpertApp = () =&gt; {
+  const categories = ['One Punch', 'Samurai X', 'Dragon Ball'];
+
+  return (
+    &lt;&gt;
+      &lt;h2&gt;GifExpertApp &lt;/h2&gt;
+      &lt;hr /&gt;
+      &lt;ol&gt;
+        {categories.map((category) =&gt; {
+          return &lt;li key={category}&gt; {category} &lt;/li&gt;;
+        })}
+      &lt;/ol&gt;
+    &lt;/&gt;
+  );
+};
+
+export default GifExpertApp;               </code></pre>
+          </div>
+        </div>
+      </div>
+    </main>
+    <!-- Main -->
+    <main class="bg-dark text-white py-5" id="agregar">
+      <hr />
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-12 col-md-4 align-items-center">
+            <lottie-player
+              id="cincoLottie"
+              src="https://assets8.lottiefiles.com/packages/lf20_aIYmyj.json"
+              style="width: 340px; height: 340px"
+              >"></lottie-player
+            >
+          </div>
+          <div class="col-12 col-md-8">
+            <h2 class="text-center display-4 mb-5 horse-font">
+              Como agregar elementos al array?
+            </h2>
+          </div>
+        </div>
+
+        <div class="row align-items-center">
+          <div class="col-12 col-md-4 horse-font">
+            <br />
+            <h4>
+              Sabemos que no podemos mutar constante, por esto usaremos el hook
+              de useState <br />
+              <br />
+              Hay un snippet escribiendo <code> useState + tab </code> (es el
+              que sale en morado o dice auto import from reat para que importe
+              correctamente el useState) <br /><br />
+              Luego de que la importacion este hecha usar el snippet
+              <code> useState </code> para que nos cree la estructura mas rapido
+              (state,setState) y listo para modificar GG. <br /><br />
+              Evitar usar el push para eso importamos el useState (setCategories
+              en el ejemplo)
+              <br /><br />
+              Si usamos directamente el setCategories estamos mandando un string
+              a un array y esta mal... <br /><br />
+              Debemos enviar un array al array para no tener errores
+              <br /><br />
+              <code> (Caso 1) </code>
+              Posicion de los elementos de las listas:
+              <hr />
+              Segun necesitemos en que lugar aparezcan los nuevos elementos de
+              las listas podemos escribir el codigo para que aparezcan al
+              principio(Caballeros del Zodiaco) o al final del array (Pokemon)
+              <br />
+              Segun el codigo quedaria asi mi lista <br />
+              1. Caballeros del Zodiaco <br />
+              2. One Punch <br />
+              3. Samurai X <br />
+              4. Dragon Ball <br />
+              5. Pokemon <br />
+              <br />
+              <code> (Caso 2) </code>
+              Callbacks para enviar un elemento:
+              <hr />
+              Tambien se pueden tratar como Callbacks Quedaria asi nuestra lista
+              <br />
+              1. Caballeros del Zodiaco <br />
+              2. One Punch <br />
+              3. Samurai X <br />
+              4. Dragon Ball <br />
+              5. Pokemon <br />
+              6. My Hero Academia <br />
+            </h4>
+          </div>
+          <div class="col-12 col-md-8">
+            <pre><code class="language-jsx"
+              style="white-space: pre-wrap; font-size:medium ;">// Archivo GifExpert.jsx
+import { useState } from 'react';
+
+const GifExpertApp = () =&gt; {
+  // const categories = ['One Punch', 'Samurai X', 'Dragon Ball'];
+  const [categories, setCategories] = useState([
+    'One Punch',
+    'Samurai X',
+    'Dragon Ball',
+  ]);
+
+  const handleAdd = () =&gt; {
+// Caso 1
+    setCategories([...categories, 'Pokemon']);
+    setCategories(['Caballeros del Zodiaco', ...categories]);
+// Caso 2    
+    setCategories((cats) =&gt; [...cats, 'My Hero Academia']);
+  };
+  return (
+    &lt;&gt;
+      &lt;h2&gt;GifExpertApp &lt;/h2&gt;
+      &lt;hr /&gt;
+      &lt;button onClick={handleAdd}&gt;Agregar&lt;/button&gt;
+      &lt;ol&gt;
+        {categories.map((category) =&gt; {
+          return &lt;li key={category}&gt; {category} &lt;/li&gt;;
+        })}
+      &lt;/ol&gt;
+    &lt;/&gt;
+  );
+};
+
+export default GifExpertApp;      </code></pre>
+          </div>
+        </div>
+      </div>
+    </main>
+    <!-- Footer -->
+    <footer class="container-fluid py-5 text-center bg-dark text-white">
+      <div class="icons-social-networks">
+        <!--A-Instagram-->
+        <a
+          href="https://www.instagram.com/xkokev/"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="bg-instagram icon-svg-size ig-circle"
+          ><img src="../../img/instagram.svg" alt="Instagram"
+        /></a>
+        <!--Z-Instagram-->
+        <!--A-Telegram-->
+        <a
+          href="https://t.me/KevinCorrea"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="bg-twitter icon-svg-size mx-3 telegram-circle"
+          ><img src="../../img/telegram.svg" alt="telegram"
+        /></a>
+        <!--Z-Telegram-->
+        <!--A-Linkedin-->
+        <a
+          href="https://www.linkedin.com/in/kevincorreasuarez/"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="bg-linkedin icon-svg-size linkedin-circle"
+          ><img src="../../img/linkedin.svg" alt="Linkedin"
+        /></a>
+        <!--Z-Linkedin-->
+      </div>
+      <p class="horse-font">Hecho con ❤ Kevin</p>
+    </footer>
+    <!-- Footer -->
+
+    <!-- Scroll -->
+
+    <!-- Scroll -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW"
+      crossorigin="anonymous"
+    ></script>
+    <script src="../../js/prism.js"></script>
+    <script src="../../js/main.js"></script>
+    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+    <script src="https://unpkg.com/@lottiefiles/lottie-interactivity@latest/dist/lottie-interactivity.min.js"></script>
+
+    <script>
+      LottieInteractivity.create({
+        mode: 'scroll',
+        player: '#unoLottie',
+        actions: [
+          {
+            visibility: [0, 1],
+            type: 'seek',
+            frames: [0, 23],
+          },
+        ],
+      });
+    </script>
+    <script>
+      LottieInteractivity.create({
+        mode: 'scroll',
+        player: '#dosLottie',
+        actions: [
+          {
+            visibility: [0, 1],
+            type: 'seek',
+            frames: [0, 360],
+          },
+        ],
+      });
+    </script>
+    <script>
+      LottieInteractivity.create({
+        mode: 'scroll',
+        player: '#tresLottie',
+        actions: [
+          {
+            visibility: [0, 1],
+            type: 'seek',
+            frames: [0, 120],
+          },
+        ],
+      });
+    </script>
+    <script>
+      LottieInteractivity.create({
+        mode: 'scroll',
+        player: '#cuatroLottie',
+        actions: [
+          {
+            visibility: [0, 1],
+            type: 'seek',
+            frames: [0, 48],
+          },
+        ],
+      });
+    </script>
+    <script>
+      LottieInteractivity.create({
+        mode: 'scroll',
+        player: '#cincoLottie',
+        actions: [
+          {
+            visibility: [0, 1],
+            type: 'seek',
+            frames: [0, 60],
+          },
+        ],
+      });
+    </script>
+  </body>
+</html>

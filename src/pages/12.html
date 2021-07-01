@@ -1,0 +1,804 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="../../css/main.css" />
+    <link rel="stylesheet" href="../../css/prism.css" />
+    <link rel="icon" type="image/png" href="../../img/cap.svg" />
+
+    <title>React tutoriales paso a paso</title>
+  </head>
+  <body class="f-bar">
+    <!-- navbar -->
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
+      <div class="container">
+        <div class="icons-social-networks">
+          <!--A-icon-->
+          <a
+            href="../../index.html"
+            rel="noopener noreferrer"
+            class="icon-svg-size"
+            ><img src="../../img/react.svg" alt="React"
+          /></a>
+          <!--Z-icon-->
+        </div>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav ms-auto mb-2 mb-lg-0 horse-font">
+            <li class="nav-item">
+              <a href="../../src/pages/11.html" class="nav-link"> 👈 </a>
+            </li>
+            <li class="nav-item">
+              <a href="#gifGrid" class="nav-link" aria-current="page">
+                GifGrid
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="#gifexpertApp" class="nav-link"> GifexpertApp </a>
+            </li>
+            <li class="nav-item">
+              <a href="#peticion" class="nav-link"> Peticion HTTP </a>
+            </li>
+            <li class="nav-item">
+              <a href="#solicitud" class="nav-link"> Solicitud </a>
+            </li>
+            <li class="nav-item">
+              <a href="#fetch" class="nav-link"> Fetch </a>
+            </li>
+            <li class="nav-item">
+              <a href="#default-values" class="nav-link"> Default Values </a>
+            </li>
+            <li class="nav-item">
+              <a href="#imagenes" class="nav-link"> Imagenes </a>
+            </li>
+            <li class="nav-item">
+              <a href="#final" class="nav-link"> Final</a>
+            </li>
+            <li class="nav-item">
+              <a
+                href="https://t.me/KevinCorrea"
+                class="nav-link"
+                target="_blank"
+              >
+                Telegram
+              </a>
+            </li>
+            <li class="nav-item">
+              <a
+                href="https://www.linkedin.com/in/kevincorreasuarez/"
+                class="nav-link"
+                target="_blank"
+              >
+                LinkedIn
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="../pages/13.html" class="nav-link"> 👉 </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <!-- navbar -->
+    <!-- Main -->
+    <main class="bg-dark text-white py-5" id="gifGrid">
+      <div class="container">
+        <div class="text-center py-5 text-primary">
+          <i class="bi bi-lightning h4"></i>
+          <i class="bi bi-lightning h4 text-danger"></i>
+          <i class="bi bi-lightning h4"></i>
+        </div>
+        <h1 class="text-center horse-font">
+          Proyecto buscador de Gifs 2 (Peticiones Fetch)
+        </h1>
+        <br />
+        <p class="text-center horse-font">*</p>
+
+        <div class="row align-items-center">
+          <div class="col-12 col-md-4">
+            <lottie-player
+              id="unoLottie"
+              src="https://assets4.lottiefiles.com/packages/lf20_c9hh3d5z.json"
+              style="width: 340px; height: 340px"
+              >"></lottie-player
+            >
+          </div>
+
+          <div class="col-12 col-md-8">
+            <h2 class="text-center display-4 mb-5 horse-font">
+              Componente que recibe los valores del array como argumento
+            </h2>
+          </div>
+        </div>
+        <br />
+        <div class="row align-items-center">
+          <div class="col-12 col-md-4 horse-font">
+            <h4>
+              Haremos un componente que cuando note que hay un nuevo elemento
+              cree la peticion HTTP y ademas traiga las imagenes
+              correspondientes y se desplegen en el DOM <br /><br />
+              Por ahora solo crearemos el archivo inclutendo un h3 con las
+              category
+            </h4>
+          </div>
+          <div class="col-12 col-md-8">
+            <pre><code class="language-jsx"
+          style="white-space: pre-wrap; font-size:medium ;">// Archivo GifGrid.js
+import React from 'react';
+
+const GifGrids = (category) =&gt; {
+  return (
+    &lt;&gt;
+      &lt;h3&gt;{category}&lt;/h3&gt;
+    &lt;/&gt;
+  );
+};
+
+export default GifGrids;</code></pre>
+            <br />
+          </div>
+        </div>
+      </div>
+    </main>
+    <!-- Main -->
+    <main class="bg-dark text-white py-5" id="gifexpertApp">
+      <hr />
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-12 col-md-4 align-items-center">
+            <lottie-player
+              id="dosLottie"
+              src="https://assets4.lottiefiles.com/packages/lf20_riok2joc.json"
+              style="width: 340px; height: 340px"
+              >"></lottie-player
+            >
+          </div>
+          <div class="col-12 col-md-8">
+            <h2 class="text-center display-4 mb-5 horse-font">
+              Modificacion del GifexpertApp
+            </h2>
+          </div>
+        </div>
+
+        <div class="row align-items-center">
+          <div class="col-12 col-md-4 horse-font">
+            <br />
+            <h4>
+              En lugar de renderizar el
+              <code> li </code>
+              renderizaremos el nuevo componente componente
+            </h4>
+          </div>
+          <div class="col-12 col-md-8">
+            <pre><code class="language-jsx"
+            style="white-space: pre-wrap; font-size:medium ;"> // Edicion archivo GifExpertApp.js
+import { useState } from 'react';
+import AddCategory from './components/AddCategory';
+import GifGrids from './components/GifGrids';
+
+const GifExpertApp = () =&gt; {
+  const [categories, setCategories] = useState(['Dragon Ball']);
+
+  return (
+    &lt;&gt;
+      &lt;h2&gt;GifExpertApp &lt;/h2&gt;
+      &lt;AddCategory setCategories={setCategories} /&gt;
+      &lt;hr /&gt;
+
+      &lt;ol&gt;
+        {categories.map((category) =&gt; (
+          // Ya no usaremos esto... return &lt;li key={category}&gt; {category} &lt;/li&gt;;
+          &lt;GifGrids key={category} category={category} /&gt;
+        ))}
+      &lt;/ol&gt;
+    &lt;/&gt;
+  );
+};
+
+export default GifExpertApp;               </code></pre>
+          </div>
+        </div>
+      </div>
+    </main>
+    <!-- Main -->
+    <main class="bg-dark text-white py-5" id="peticion">
+      <hr />
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-12 col-md-4 align-items-center">
+            <lottie-player
+              id="tresLottie"
+              src="https://assets4.lottiefiles.com/packages/lf20_urr8jb9p.json"
+              style="width: 340px; height: 340px"
+              >"></lottie-player
+            >
+          </div>
+          <div class="col-12 col-md-8">
+            <h2 class="text-center display-4 mb-5 horse-font">
+              Envio de peticion HTTP
+            </h2>
+          </div>
+        </div>
+        <br />
+        <div class="row align-items-center">
+          <div class="col-12 col-md-4 horse-font">
+            <h4>
+              Buscaremos dentro de la
+              <a href="https://developers.giphy.com/docs/api/endpoint#trending">
+                pagina de la api
+              </a>
+              en la seccion developers el
+              <code>Endpoint</code>
+              de se <code>Search</code> <br />
+              Que seria esto : api.giphy.com/v1/gifs/search <br /><br />
+              En PostMan o Insomia(yo usare Insomia) enviaremos nuetra solicitud
+              <code>GET</code> con el url del endpoint de search y nos dara este
+              error en Insomia porque no tenemos la API Key <br /><code>
+                { "message": "No API key found in request" }
+              </code>
+              <br /><br />
+              Solucion del error de autentificacion Para solucionarlo buscaremos
+              nuestra API Key : JeeWKM4pXxeFy1ne8EhjO11BtYtTCNb5 y lo enviaremos
+              como argumento en los parametros <br /><br />
+              En Insomia es en la seccion de Query <br />
+              New value = api_key <br />
+              Value = JeeWKM4pXxeFy1ne8EhjO11BtYtTCNb5
+            </h4>
+          </div>
+          <div class="col-12 col-md-8">
+            <img id="myImg" src="../../img/12/1.png" alt="1" ">
+
+            <!-- The Modal -->
+            <div id="myModal" class="modal">
+              <!-- The Close Button -->
+              <span class="close">&times;</span>
+
+              <!-- Modal Content (The Image) -->
+              <img class="modal-content" id="img01" />
+
+              <!-- Modal Caption (Image Text) -->
+              <div id="caption"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <!-- Main -->
+    <main class="bg-dark text-white py-5" id="solicitud">
+      <hr />
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-12 col-md-4 align-items-center">
+            <lottie-player
+              id="cuatroLottie"
+              src="https://assets4.lottiefiles.com/packages/lf20_llpnmgts.json"
+              style="width: 340px; height: 340px"
+              >"></lottie-player
+            >
+          </div>
+          <div class="col-12 col-md-8">
+            <h2 class="text-center display-4 mb-5 horse-font">
+              Solicitud de GIF
+            </h2>
+          </div>
+        </div>
+        <br />
+        <div class="row align-items-center">
+          <div class="col-12 col-md-4 horse-font">
+            <h4>
+              Importante y quizas algo obvio pero cada API tiene su propios
+              parametros y metodos y nombres distintos <br /><br />
+              Usaremos el parametro q que es para activar las busquedas <br />
+              New value = q <br />
+              Value = Pokemon <br />
+              <br />
+              Y el parametro limit <br />
+              New value = limit <br />
+              Value = 10 <br />
+              Ahora nos copiaremos esa URL y la usaremos en VS Code
+            </h4>
+          </div>
+          <div class="col-12 col-md-8">
+            <img id="myImg" src="../../img/12/2.png" alt="2" ">
+
+            <!-- The Modal -->
+            <div id="myModal" class="modal">
+              <!-- The Close Button -->
+              <span class="close">&times;</span>
+
+              <!-- Modal Content (The Image) -->
+              <img class="modal-content" id="img01" />
+
+              <!-- Modal Caption (Image Text) -->
+              <div id="caption"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <!-- Main -->
+    <main class="bg-dark text-white py-5" id="fetch">
+      <hr />
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-12 col-md-4 align-items-center">
+            <lottie-player
+              id="cincoLottie"
+              src="https://assets4.lottiefiles.com/packages/lf20_sovfbcuo.json"
+              style="width: 340px; height: 340px"
+              >"></lottie-player
+            >
+          </div>
+          <div class="col-12 col-md-8">
+            <h2 class="text-center display-4 mb-5 horse-font">
+              Fetch GrifGrid.js
+            </h2>
+          </div>
+        </div>
+
+        <div class="row align-items-center">
+          <div class="col-12 col-md-4 horse-font">
+            <h4>
+              URL en VS Code Debemos añadir el HTTPS si hace falta <br /><br />
+              Ahora usaremos fetch y el async-await <br />
+              A data la destructuraremos para usar sus elementos <br />
+              Extrerenos en este caso id, titulo, ademas del URL de las imagenes
+              de tamaño medio <br />
+              En URL usaremos el oprador ternario por si no envian la imagen
+              evitar errores
+            </h4>
+          </div>
+          <div class="col-12 col-md-8">
+            <pre><code class="language-jsx"
+              style="white-space: pre-wrap; font-size:medium ;"> // Modificacion de GifGrid.js
+import React from 'react';
+
+const GifGrids = ({ category }) =&gt; {
+  const getGifs = async () =&gt; {
+    const url =
+      'https://api.giphy.com/v1/gifs/search%09?q=Pokemon&limit=10&api_key=JeeWKM4pXxeFy1ne8EhjO11BtYtTCNb5';
+    const resp = await fetch(url);
+    const { data } = await resp.json();
+    const gifs = data.map((img) =&gt; {
+      return {
+        id: img.id,
+        title: img.title,
+        url: img.images?.downsized_medium.url,
+      };
+    });
+
+    console.log(gifs);
+  };
+  getGifs();
+
+  return (
+    &lt;&gt;
+      &lt;h3&gt;{category}&lt;/h3&gt;
+    &lt;/&gt;
+  );
+};
+export default GifGrids;                 </code></pre>
+          </div>
+        </div>
+      </div>
+    </main>
+    <!-- Main -->
+    <main class="bg-dark text-white py-5" id="default-values">
+      <hr />
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-12 col-md-4 align-items-center">
+            <lottie-player
+              id="seisLottie"
+              src="https://assets4.lottiefiles.com/packages/lf20_rmpmxft3.json"
+              style="width: 340px; height: 340px"
+              >"></lottie-player
+            >
+          </div>
+          <div class="col-12 col-md-8">
+            <h2 class="text-center display-4 mb-5 horse-font">
+              Default Values con defaultProps
+            </h2>
+          </div>
+        </div>
+
+        <div class="row align-items-center">
+          <div class="col-12 col-md-4 horse-font">
+            <h3>USE EFFECTS en GrifGrid.js</h3>
+            <hr />
+            <h4>
+              Me permite ejecutar codigo de manera condicional sin importar el
+              nivel donde se encuentre la funcion ejecutandose, el segundo
+              elemento es una lista de dependencias (dentro de el array)
+              <br /><br />
+              Si dejamos la lista de dependencias vacio la funcion useEffect
+              solo se va ejecutar una sola vez, osea solo se ejecutara cuando el
+              componente es renderizado la primera vez
+              <br /><br />
+              NOta tenemos dos snipets para USE EFFECT
+              <br />
+              - Auto importacion: El primero que aparece un cubo en morado para
+              importacion de USE EFFECT (Aparece solo escribiendo useEffect)
+              <br />
+              - Estructura: El segundo aparece un cuadrado blanco le damos y nos
+              da el cascaron (Aparece solo escribiendo useEffect)
+            </h4>
+          </div>
+          <div class="col-12 col-md-8">
+            <pre><code class="language-jsx"
+              style="white-space: pre-wrap; font-size:medium ;">// Modificiacion de GifGrid.js
+import React, { useEffect } from 'react';
+
+const GifGrids = ({ category }) =&gt; {
+  useEffect(() =&gt; {
+    getGifs();
+  }, []);
+
+  const getGifs = async () =&gt; {
+    const url =
+      'https://api.giphy.com/v1/gifs/search%09?q=Pokemon&limit=10&api_key=JeeWKM4pXxeFy1ne8EhjO11BtYtTCNb5';
+    const resp = await fetch(url);
+    const { data } = await resp.json();
+    const gifs = data.map((img) =&gt; {
+      return {
+        id: img.id,
+        title: img.title,
+        url: img.images?.downsized_medium.url,
+      };
+    });
+
+    console.log(gifs);
+  };
+
+  return (
+    &lt;&gt;
+      &lt;h3&gt;{category}&lt;/h3&gt;
+    &lt;/&gt;
+  );
+};
+export default GifGrids;     </code></pre>
+          </div>
+        </div>
+      </div>
+    </main>
+    <!-- Main -->
+    <main class="bg-dark text-white py-5" id="imagenes">
+      <hr />
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-12 col-md-4 align-items-center">
+            <lottie-player
+              id="sieteLottie"
+              src="https://assets4.lottiefiles.com/packages/lf20_juote5w5.json"
+              style="width: 340px; height: 340px"
+              >"></lottie-player
+            >
+          </div>
+          <div class="col-12 col-md-8">
+            <h2 class="text-center display-4 mb-5 horse-font">
+              Mostrando las imagenes GrifGrid.js
+            </h2>
+          </div>
+        </div>
+
+        <div class="row align-items-center">
+          <div class="col-12 col-md-4 horse-font">
+            <h4>
+              Para esto vamos a usar USE STATE <br />
+              <br />
+              El valor de nuestra key ser el id de esta manera podremos añadir
+              los 10 elementos a la lista <br /><br />
+              Añadiremos el GifGridItem y este sera añadido e key y desde ahi
+              enviaremos las propiedaes de img con `{..img}`
+              <br /><br />
+              Envio de todas las propiedades de img
+              <br /><br />
+              Manera comun de envio de imagenes
+              <code> {...img} </code>
+            </h4>
+          </div>
+          <div class="col-12 col-md-8">
+            <pre><code class="language-jsx"
+                  style="white-space: pre-wrap; font-size:medium ;">// Modificiacion de GifGrid.js
+import React, { useEffect, useState } from 'react';
+import GifGridItem from './GifGridItem';
+
+const [images, setImages] = useState([]);
+const GifGrids = ({ category }) =&gt; {
+  useEffect(() =&gt; {
+    getGifs();
+  }, []);
+
+  const getGifs = async () =&gt; {
+    const url =
+      'https://api.giphy.com/v1/gifs/search%09?q=Pokemon&limit=10&api_key=JeeWKM4pXxeFy1ne8EhjO11BtYtTCNb5';
+    const resp = await fetch(url);
+    const { data } = await resp.json();
+    const gifs = data.map((img) =&gt; {
+      return {
+        id: img.id,
+        title: img.title,
+        url: img.images?.downsized_medium.url,
+      };
+    });
+
+    console.log(gifs);
+    setImages(gifs);
+  };
+
+  return (
+    &lt;&gt;
+      &lt;h3&gt;{category}&lt;/h3&gt;
+      {images.map((img) =&gt; (
+        &lt;GifGridItem key={img.id} {...img} /&gt;
+      ))}
+    &lt;/&gt;
+  );
+};
+export default GifGrids; </code></pre>
+          </div>
+        </div>
+      </div>
+    </main>
+    <!-- Main -->
+    <main class="bg-dark text-white py-5" id="final">
+      <hr />
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-12 col-md-4 align-items-center">
+            <lottie-player
+              id="ochoLottie"
+              src="https://assets4.lottiefiles.com/packages/lf20_wzaxxisv.json"
+              style="width: 340px; height: 340px"
+              >"></lottie-player
+            >
+          </div>
+          <div class="col-12 col-md-8">
+            <h2 class="text-center display-4 mb-5 horse-font">
+              Componente GifGridItem GifGridItem.js
+            </h2>
+          </div>
+        </div>
+
+        <div class="row align-items-center">
+          <div class="col-12 col-md-4 horse-font">
+            <h4>Componente de donde enviaremos las imagenes con su titulo</h4>
+          </div>
+          <div class="col-12 col-md-8">
+            <pre><code class="language-jsx"
+                    style="white-space: pre-wrap; font-size:medium ;">// Modificiacion de GifGridItem.js
+import React from 'react';
+
+const GifGridItem = ({ id, title, url }) =&gt; {
+  console.log(id, title, url);
+  return (
+    &lt;&gt;
+      &lt;img src={url} alt={title} /&gt;
+      &lt;p&gt;{title}&lt;/p&gt;
+    &lt;/&gt;
+  );
+};
+
+export default GifGridItem;                     </code></pre>
+          </div>
+        </div>
+      </div>
+    </main>
+    <!-- Footer -->
+    <footer class="container-fluid py-5 text-center bg-dark text-white">
+      <div class="icons-social-networks">
+        <!--A-Instagram-->
+        <a
+          href="https://www.instagram.com/xkokev/"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="bg-instagram icon-svg-size ig-circle"
+          ><img src="../../img/instagram.svg" alt="Instagram"
+        /></a>
+        <!--Z-Instagram-->
+        <!--A-Telegram-->
+        <a
+          href="https://t.me/KevinCorrea"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="bg-twitter icon-svg-size mx-3 telegram-circle"
+          ><img src="../../img/telegram.svg" alt="telegram"
+        /></a>
+        <!--Z-Telegram-->
+        <!--A-Linkedin-->
+        <a
+          href="https://www.linkedin.com/in/kevincorreasuarez/"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="bg-linkedin icon-svg-size linkedin-circle"
+          ><img src="../../img/linkedin.svg" alt="Linkedin"
+        /></a>
+        <!--Z-Linkedin-->
+      </div>
+      <p class="horse-font">Hecho con ❤ Kevin</p>
+    </footer>
+    <!-- Footer -->
+
+    <!-- Scroll -->
+
+    <!-- Scroll -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW"
+      crossorigin="anonymous"
+    ></script>
+    <script src="../../js/prism.js"></script>
+    <script src="../../js/main.js"></script>
+    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+    <script src="https://unpkg.com/@lottiefiles/lottie-interactivity@latest/dist/lottie-interactivity.min.js"></script>
+    <script>
+      // Get the modal
+      var modal = document.getElementById('myModal');
+
+      // Get the image and insert it inside the modal - use its "alt" text as a caption
+      var img = document.getElementById('myImg');
+      var modalImg = document.getElementById('img01');
+      var captionText = document.getElementById('caption');
+      img.onclick = function () {
+        modal.style.display = 'block';
+        modalImg.src = this.src;
+        captionText.innerHTML = this.alt;
+      };
+
+      // Get the <span> element that closes the modal
+      var span = document.getElementsByClassName('close')[0];
+
+      // When the user clicks on <span> (x), close the modal
+      span.onclick = function () {
+        modal.style.display = 'none';
+      };
+    </script>
+    <script>
+      // Get the modal
+      var modal = document.getElementById('myModal');
+
+      // Get the image and insert it inside the modal - use its "alt" text as a caption
+      var img = document.getElementById('myImg');
+      var modalImg = document.getElementById('img01');
+      var captionText = document.getElementById('caption');
+      img.onclick = function () {
+        modal.style.display = 'block';
+        modalImg.src = this.src;
+        captionText.innerHTML = this.alt;
+      };
+
+      // Get the <span> element that closes the modal
+      var span = document.getElementsByClassName('close')[0];
+
+      // When the user clicks on <span> (x), close the modal
+      span.onclick = function () {
+        modal.style.display = 'none';
+      };
+    </script>
+    <script>
+      LottieInteractivity.create({
+        mode: 'scroll',
+        player: '#unoLottie',
+        actions: [
+          {
+            visibility: [0, 1],
+            type: 'seek',
+            frames: [0, 51],
+          },
+        ],
+      });
+    </script>
+    <script>
+      LottieInteractivity.create({
+        mode: 'scroll',
+        player: '#dosLottie',
+        actions: [
+          {
+            visibility: [0, 1],
+            type: 'seek',
+            frames: [0, 52],
+          },
+        ],
+      });
+    </script>
+    <script>
+      LottieInteractivity.create({
+        mode: 'scroll',
+        player: '#tresLottie',
+        actions: [
+          {
+            visibility: [0, 1],
+            type: 'seek',
+            frames: [0, 51],
+          },
+        ],
+      });
+    </script>
+    <script>
+      LottieInteractivity.create({
+        mode: 'scroll',
+        player: '#cuatroLottie',
+        actions: [
+          {
+            visibility: [0, 1],
+            type: 'seek',
+            frames: [0, 51],
+          },
+        ],
+      });
+    </script>
+    <script>
+      LottieInteractivity.create({
+        mode: 'scroll',
+        player: '#cincoLottie',
+        actions: [
+          {
+            visibility: [0, 1],
+            type: 'seek',
+            frames: [0, 51],
+          },
+        ],
+      });
+    </script>
+    <script>
+      LottieInteractivity.create({
+        mode: 'scroll',
+        player: '#seisLottie',
+        actions: [
+          {
+            visibility: [0, 1],
+            type: 'seek',
+            frames: [0, 51],
+          },
+        ],
+      });
+    </script>
+    <script>
+      LottieInteractivity.create({
+        mode: 'scroll',
+        player: '#sieteLottie',
+        actions: [
+          {
+            visibility: [0, 1],
+            type: 'seek',
+            frames: [0, 51],
+          },
+        ],
+      });
+    </script>
+    <script>
+      LottieInteractivity.create({
+        mode: 'scroll',
+        player: '#ochoLottie',
+        actions: [
+          {
+            visibility: [0, 1],
+            type: 'seek',
+            frames: [0, 129],
+          },
+        ],
+      });
+    </script>
+  </body>
+</html>

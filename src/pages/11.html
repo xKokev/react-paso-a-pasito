@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="../../css/main.css" />
+    <link rel="stylesheet" href="../../css/prism.css" />
+    <link rel="icon" type="image/png" href="../../img/cap.svg" />
+
+    <title>React tutoriales paso a paso</title>
+  </head>
+  <body class="f-bar">
+    <!-- navbar -->
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
+      <div class="container">
+        <div class="icons-social-networks">
+          <!--A-icon-->
+          <a
+            href="../../index.html"
+            rel="noopener noreferrer"
+            class="icon-svg-size"
+            ><img src="../../img/react.svg" alt="React"
+          /></a>
+          <!--Z-icon-->
+        </div>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav ms-auto mb-2 mb-lg-0 horse-font">
+            <li class="nav-item">
+              <a href="../../src/pages/10.html" class="nav-link"> 👈 </a>
+            </li>
+            <li class="nav-item">
+              <a href="#on-change" class="nav-link" aria-current="page">
+                On Change
+              </a>
+            </li>
+            <li class="nav-item">
+              <a
+                href="#prevent-default
+              "
+                class="nav-link"
+              >
+                Prevent Default
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="#comunicacion" class="nav-link"> Comunicacion </a>
+            </li>
+            <li class="nav-item">
+              <a href="#boton-form" class="nav-link"> Boton Form </a>
+            </li>
+            <li class="nav-item">
+              <a
+                href="https://t.me/KevinCorrea"
+                class="nav-link"
+                target="_blank"
+              >
+                Telegram
+              </a>
+            </li>
+            <li class="nav-item">
+              <a
+                href="https://www.linkedin.com/in/kevincorreasuarez/"
+                class="nav-link"
+                target="_blank"
+              >
+                LinkedIn
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="../pages/12.html" class="nav-link"> 👉 </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <!-- navbar -->
+    <!-- Main -->
+    <main class="bg-dark text-white py-5" id="on-change">
+      <div class="container">
+        <div class="text-center py-5 text-primary">
+          <i class="bi bi-lightning h4"></i>
+          <i class="bi bi-lightning h4 text-danger"></i>
+          <i class="bi bi-lightning h4"></i>
+        </div>
+        <h1 class="text-center horse-font">Proyecto buscador de Gifs 2</h1>
+        <br />
+        <p class="text-center horse-font">*</p>
+
+        <div class="row align-items-center">
+          <div class="col-12 col-md-4">
+            <lottie-player
+              id="unoLottie"
+              src="https://assets8.lottiefiles.com/packages/lf20_8TYQ3W.json"
+              style="width: 340px; height: 340px"
+              >"></lottie-player
+            >
+          </div>
+
+          <div class="col-12 col-md-8">
+            <h2 class="text-center display-4 mb-5 horse-font">
+              Creacion de Componentes, On Change
+            </h2>
+          </div>
+        </div>
+        <br />
+        <div class="row align-items-center">
+          <div class="col-12 col-md-4 horse-font">
+            <h4>
+              Creacion de Componentes
+              <hr />
+              Crearemos otra carpeta con los componentes (dentro de la carpeta
+
+              <code> src </code>
+              ) llamada
+              <code> components </code>
+
+              y ahi crearemos nuestros archivos con los componentes (recordar
+              exportar el componente)
+              <hr />
+              Agregar categorias manualmente desde un input
+              <br />
+
+              Necesito tener un tipo de estado ya que queremos conocer lo que el
+              usuario escribe por eso uso el useState <br /><br />
+              <code> Hola Mundo </code>
+              sera el valor inicial del inputValue y podria ser un string,
+              array, objeto o lo que necesitemos
+              <hr />
+              <br />
+              ON CHANGE importancia
+              <br />
+              Si no extraemos el valor del target no podremos modificarlo y
+              tendredemos problemas
+              <br />
+              Para ello creamos una funcion llamada
+              <code> handleInputChange </code> que esta capturara el evento,
+              para luego asignarlo ahora si al <code> setInputValue </code> ...
+              <br />
+              con esto podremos escribir libremente en el input <br /><br />
+              El input value siempre sera el valor actulizado de lo que el
+              usuario haya escrito <br />
+              En el
+              <code> &lt;h1&gt;{inputValue}&lt;/h1&gt; </code>
+              se ira actualizando segun el valor que tengamos en nuestro
+              formulario
+            </h4>
+          </div>
+          <div class="col-12 col-md-8">
+            <pre><code class="language-jsx"
+          style="white-space: pre-wrap; font-size:medium ;">// Archivo AddCategory.jsx 
+import React, { useState } from 'react';
+
+const AddCategory = () =&gt; {
+  const [inputValue, setInputValue] = useState('Hola mundo');
+
+  const handleInputChange = (e) =&gt; {
+    setInputValue(e.target.value);
+  };
+  return (
+    &lt;&gt;
+      &lt;h1&gt;{inputValue}&lt;/h1&gt;
+      &lt;input type='text' value={inputValue} onChange={handleInputChange} /&gt;
+    &lt;/&gt;
+  );
+};
+
+export default AddCategory;           </code></pre>
+          </div>
+        </div>
+      </div>
+    </main>
+    <!-- Main -->
+
+    <!-- Main -->
+    <main class="bg-dark text-white py-5" id="prevent-default">
+      <hr />
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-12 col-md-4 align-items-center">
+            <lottie-player
+              id="dosLottie"
+              src="https://assets6.lottiefiles.com/temporary_files/GODQ3d.json"
+              style="width: 340px; height: 340px"
+              >"></lottie-player
+            >
+          </div>
+          <div class="col-12 col-md-8">
+            <h2 class="text-center display-4 mb-5 horse-font">
+              Prevenir comportamiento por defecto del formulario
+            </h2>
+          </div>
+        </div>
+        <br />
+        <div class="row align-items-center">
+          <div class="col-12 col-md-4 horse-font">
+            <h3>Prevent Default</h3>
+            <hr />
+            <h4>
+              El comportamiento por defecto refresca completamente la pagina
+              para evitarlo usaremos el
+              <code> e.preventDefault() </code>
+              y a nuestro formulario le añadimos
+              <code> onSubmit={handleSubmit}` </code>
+              <br /><br />
+              Nota en el caso de tener un elemento que agrupe a los demas (form)
+              podemos desacernos del fragment(Como en el ejemplo)
+            </h4>
+          </div>
+          <div class="col-12 col-md-8">
+            <pre><code class="language-jsx"
+              style="white-space: pre-wrap; font-size:medium ;">// Modificacion del archivo AddCategory.jsx 
+import React, { useState } from 'react';
+
+const AddCategory = () =&gt; {
+  const [inputValue, setInputValue] = useState('Hola mundo');
+
+  const handleInputChange = (e) =&gt; {
+    setInputValue(e.target.value);
+  };
+
+  const handleSubmit = (e) =&gt; {
+    e.preventDefault();
+  };
+  return (
+    &lt;form onSubmit={handleSubmit}&gt;
+      &lt;input type='text' value={inputValue} onChange={handleInputChange} /&gt;
+    &lt;/form&gt;
+  );
+};
+
+export default AddCategory;                 </code></pre>
+          </div>
+        </div>
+      </div>
+    </main>
+    <!-- Main -->
+    <main class="bg-dark text-white py-5" id="comunicacion">
+      <hr />
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-12 col-md-4 align-items-center">
+            <lottie-player
+              id="tresLottie"
+              src="https://assets4.lottiefiles.com/packages/lf20_yriifcob.json"
+              style="width: 340px; height: 340px"
+              >"></lottie-player
+            >
+          </div>
+          <div class="col-12 col-md-8">
+            <h2 class="text-center display-4 mb-5 horse-font">
+              Comunicacion entre componentes
+            </h2>
+          </div>
+        </div>
+
+        <div class="row align-items-center">
+          <div class="col-12 col-md-4 horse-font">
+            <h4>
+              Podemos trapasar propiedades a los componentes se le envia a la
+              funcion setCategories la referencia de setCategories
+            </h4>
+          </div>
+          <div class="col-12 col-md-8">
+            <pre><code class="language-jsx"
+              style="white-space: pre-wrap; font-size:medium ;">// Archivo GifExpertApp.jsx 
+import { useState } from 'react';
+import AddCategory from './components/AddCategory';
+
+const GifExpertApp = () =&gt; {
+  const [categories, setCategories] = useState([
+    'One Punch',
+    'Samurai X',
+    'Dragon Ball',
+  ]);
+
+  return (
+    &lt;&gt;
+      &lt;h2&gt;GifExpertApp &lt;/h2&gt;
+      &lt;AddCategory setCategories={setCategories} /&gt;
+      &lt;hr /&gt;
+
+      &lt;ol&gt;
+        {categories.map((category) =&gt; {
+          return &lt;li key={category}&gt; {category} &lt;/li&gt;;
+        })}
+      &lt;/ol&gt;
+    &lt;/&gt;
+  );
+};
+
+export default GifExpertApp;                     </code></pre>
+          </div>
+        </div>
+      </div>
+    </main>
+    <!-- Main -->
+    <main class="bg-dark text-white py-5" id="boton-form">
+      <hr />
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-12 col-md-4 align-items-center">
+            <lottie-player
+              id="cuatroLottie"
+              src="https://assets4.lottiefiles.com/packages/lf20_gn57ndas.json"
+              style="width: 340px; height: 340px"
+              >"></lottie-player
+            >
+          </div>
+          <div class="col-12 col-md-8">
+            <h2 class="text-center display-4 mb-5 horse-font">
+              Activar boton entre formularios
+            </h2>
+          </div>
+        </div>
+
+        <div class="row align-items-center">
+          <div class="col-12 col-md-4 horse-font">
+            <h4>
+              <br />
+              Se puede usar props pero no es tan comun, entonces desctructuramos
+              setCategories y usamos una funcion de flecha con
+              <code> cats </code> <br /><br />
+              Esto debido a que no tenemos acceso de esta manera a las
+              categorias ni al arreglo
+              <code> categories </code>
+              que esta dentro de GifExpertApp <br />
+              <hr />
+              Errores de validacion:
+              <br />
+              Si enviamos dos veces el mismo elemento no podemos almacenarlos
+              con el mismo key tampoco recibir un string vacio, para ello
+              realizaremos validaciones Sera una validacion sencilla con el if y
+              la longitud Y borrando el valor por defecto despues del envio
+              <br />
+              <hr />
+              Haciendo lo mismo usando PROP TYPES <br />
+              Si queremos que setCategories sea una funcion requerida para el
+              componente AddCategory.js lo podemos condicionar para que este
+              definido dentro de mi GiffExpertApp.js <br />
+              Para esto importamos Proptypes y al final del codigo damos esa
+              condcion que queremos
+              <br />
+              <hr />
+              Error undefined donde antes teniamos el valor por defecto de Hola
+              mundo
+              <br />
+              Si dejamos a secas el valor en el
+              <code> useState() </code>
+              tendremos un undefined en el inputValue (por lo tanto el value) y
+              no podremos usar el componente ya que no podemos pasar de
+              undefined a un string <br />
+              Para corregir este error debemos hacer que el inputValue sea un
+              string vacio ''
+            </h4>
+          </div>
+          <div class="col-12 col-md-8">
+            <pre><code class="language-jsx"
+              style="white-space: pre-wrap; font-size:medium ;">// Modificacion del archivo AddCategory.jsx 
+import React, { useState } from 'react';
+
+const AddCategory = ({ setCategories }) =&gt; {
+  const [inputValue, setInputValue] = useState('Hola mundo');
+
+  const handleInputChange = (e) =&gt; {
+    setInputValue(e.target.value);
+  };
+
+  const handleSubmit = (e) =&gt; {
+    e.preventDefault();
+    if (inputValue.trim().length &gt; 2) {
+      setCategories((cats) =&gt; [...cats, inputValue]);
+      inputValue('');
+    }
+  };
+  return (
+    &lt;form onSubmit={handleSubmit}&gt;
+      &lt;input type='text' value={inputValue} onChange={handleInputChange} /&gt;
+    &lt;/form&gt;
+  );
+};
+
+export default AddCategory;                   </code></pre>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="container-fluid py-5 text-center bg-dark text-white">
+      <div class="icons-social-networks">
+        <!--A-Instagram-->
+        <a
+          href="https://www.instagram.com/xkokev/"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="bg-instagram icon-svg-size ig-circle"
+          ><img src="../../img/instagram.svg" alt="Instagram"
+        /></a>
+        <!--Z-Instagram-->
+        <!--A-Telegram-->
+        <a
+          href="https://t.me/KevinCorrea"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="bg-twitter icon-svg-size mx-3 telegram-circle"
+          ><img src="../../img/telegram.svg" alt="telegram"
+        /></a>
+        <!--Z-Telegram-->
+        <!--A-Linkedin-->
+        <a
+          href="https://www.linkedin.com/in/kevincorreasuarez/"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="bg-linkedin icon-svg-size linkedin-circle"
+          ><img src="../../img/linkedin.svg" alt="Linkedin"
+        /></a>
+        <!--Z-Linkedin-->
+      </div>
+      <p class="horse-font">Hecho con ❤ Kevin</p>
+    </footer>
+    <!-- Footer -->
+
+    <!-- Scroll -->
+
+    <!-- Scroll -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW"
+      crossorigin="anonymous"
+    ></script>
+    <script src="../../js/prism.js"></script>
+    <script src="../../js/main.js"></script>
+    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+    <script src="https://unpkg.com/@lottiefiles/lottie-interactivity@latest/dist/lottie-interactivity.min.js"></script>
+    <script>
+      LottieInteractivity.create({
+        mode: 'scroll',
+        player: '#unoLottie',
+        actions: [
+          {
+            visibility: [0, 1],
+            type: 'seek',
+            frames: [0, 81],
+          },
+        ],
+      });
+    </script>
+    <script>
+      LottieInteractivity.create({
+        mode: 'scroll',
+        player: '#dosLottie',
+        actions: [
+          {
+            visibility: [0, 1],
+            type: 'seek',
+            frames: [0, 317],
+          },
+        ],
+      });
+    </script>
+
+    <script>
+      LottieInteractivity.create({
+        mode: 'scroll',
+        player: '#tresLottie',
+        actions: [
+          {
+            visibility: [0, 1],
+            type: 'seek',
+            frames: [80, 160],
+          },
+        ],
+      });
+    </script>
+    <script>
+      LottieInteractivity.create({
+        mode: 'scroll',
+        player: '#cuatroLottie',
+        actions: [
+          {
+            visibility: [0, 1],
+            type: 'seek',
+            frames: [0, 125],
+          },
+        ],
+      });
+    </script>
+  </body>
+</html>

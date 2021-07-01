@@ -95,24 +95,12 @@
             </h2>
           </div>
           <div class="col-12 col-md-6">
-            <lottie-player
-              id="twoLottie"
-              src="https://assets3.lottiefiles.com/packages/lf20_Lybh7B/data.json"
-              style="width: 340px; height: 340px"
-              >"></lottie-player
-            >
+            <lottie-player id="tresLottie" src="https://assets9.lottiefiles.com/packages/lf20_zxfaytb8.json" style="width:340px; height: 340px;">"></lottie-player>
+
           </div>
         </div>
 
-        <h5 class="py-5 display-6 horse-font">
-          Pagina basada en cursos, tutoriales e informacion que he recolectado en una sola  web para tener mis apuntes a la mano y que su vez puedan ayudar a otros desarrolladores o personas que apenas estan iniciandose en esta tecnologia 
-<br><br>
-Aprende paso a paso
-Toda la informacion esta explicada detalladamente para que nadie se pierda en el aprendizaje
-<br><br>
-Informacion completamente gratis sin membresias especiales, la idea es que cualquier persona pueda aprender React aunque no tenga mucha capacidad financiera <br><br> Actualemente trabajo como freelancer pero pueden contactarme por Telegram o LinkedIn <br><br>Recomienda esta web a personas que deseen mejorar sus skills en React o simplemente recordar alguna informacion importante 
-
-        </h5>
+      
       </div>
     </main>
     <!-- Main -->
@@ -160,9 +148,21 @@ Informacion completamente gratis sin membresias especiales, la idea es que cualq
                 <li><a href="./src/pages/8.html">Configuracion setupTest.js y Enzyme
                 </a></li>
                 <li><a href="./src/pages/9.html">Pruebas con Enzyme (Render vs Shallow vs Mount y Before Each)      </a></li>
+                <li><a href="./src/pages/10.html">Proyecto buscador de Gifs 1 (Eestructura en React, impresion de un array, key, agregar elementos al array)</a></li>
+                <li><a href="./src/pages/11.html">Proyecto buscador de Gifs 2 (Creacion de Componentes, On Change, Prevent Default, Comunicacion entre componentes, Activar boton)      </a></li>
+                <li><a href="./src/pages/12.html">Proyecto buscador de Gifs 3 ( Peticiones Fetch, Componente que recibe los valores del array como argumento, Envio de peticion HTTP, resultado final)</a></li>
 
               </ul>
             </div>
+            <h6 class="py-5 display-6 horse-font">
+              Pagina basada en cursos, tutoriales e informacion que he recolectado en una sola  web para tener mis apuntes a la mano y que su vez puedan ayudar a otros desarrolladores o personas que apenas estan iniciandose en esta tecnologia 
+    <br><br>
+    Aprende paso a paso
+    Toda la informacion esta explicada detalladamente para que nadie se pierda en el aprendizaje
+    <br><br>
+    Informacion completamente gratis sin membresias especiales, la idea es que cualquier persona pueda aprender React aunque no tenga mucha capacidad financiera <br><br> Actualemente trabajo como freelancer pero pueden contactarme por Telegram o LinkedIn <br><br>Recomienda esta web a personas que deseen mejorar sus skills en React o simplemente recordar alguna informacion importante 
+    
+            </h6>
           </div>
         </div>
       </div>
@@ -220,17 +220,17 @@ Informacion completamente gratis sin membresias especiales, la idea es que cualq
 
     <script>
       LottieInteractivity.create({
-        mode: 'scroll',
-        player: '#twoLottie',
-        actions: [
-          {
-            visibility: [0, 1],
-            type: 'seek',
-            frames: [0, 179],
-          },
-        ],
+          mode:"scroll",
+          player:'#tresLottie',
+          actions: [
+              {
+                  visibility:[0,1],
+                  type: "seek",
+                  frames: [0, 360],
+              },
+          ]  
       });
-    </script>
+      </script>
     <script>
       LottieInteractivity.create({
         mode: 'scroll',
